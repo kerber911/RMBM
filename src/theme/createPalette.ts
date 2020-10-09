@@ -3,10 +3,10 @@ import { PaletteOptions } from '@material-ui/core/styles/createPalette'
 const palette = (): PaletteOptions => {
     return{
         primary:{
-            main: '',
+            main: '#F7931E',
             dark:'',
             light:'',
-            contrastText: ''
+            contrastText: '#FCCD84'
         },
         secondary:{
             main: '',
@@ -21,13 +21,13 @@ const palette = (): PaletteOptions => {
             contrastText: ''
         },
         text:{
-            primary: '',
-            secondary:'',
+            primary: '#000000',
+            secondary:'#FCCD84',
             disabled:'',
-            hint: ''
+            hint: '#FFFFFF'
         },
         background:{
-            default:''
+            default:'#FFFFFF'
         }
     }
 
