@@ -1,5 +1,5 @@
 import { TypographyOptions } from '@material-ui/core/styles/createTypography'
-import  { Palette } from '@material-ui/core/styles/createPalette'
+import { Palette } from '@material-ui/core/styles/createPalette'
 
 const createTypographyStyle = (palette: Palette): TypographyOptions => {
   return {

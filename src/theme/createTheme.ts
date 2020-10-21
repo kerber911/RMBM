@@ -6,8 +6,7 @@ import createTypographyStyle from './createTypography'
 
 const Palette = createPalette(palette())
 
-
-const theme  = createMuiTheme({
+const theme = createMuiTheme({
   palette: Palette,
   typography: createTypographyStyle(Palette),
   spacing: 8
