@@ -30,4 +30,4 @@ const styles = (theme: Theme) =>
     }
   })
 
-export default withStyles(styles, { name: 'MuiiLoginVia' })(LoginVia)
+export default withStyles(styles, { name: 'MuiLoginVia' })(LoginVia)

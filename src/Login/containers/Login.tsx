@@ -10,27 +10,47 @@ import { ThunkDispatch } from 'redux-thunk'
 import { connect } from 'react-redux'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
+import Header from '../components/Header/Header'
+import RadioButtonChecked from '@material-ui/icons/RadioButtonChecked'
+import RadioButtonUnchecked from '@material-ui/icons/RadioButtonUnchecked'
 
 const styles = (theme: Theme) => {
-  createStyles({
-    root: {
-      background: 'white'
+  return createStyles({
+    keepSignin: {
+      backgroundColor: theme.palette.primary.dark,
+      width: '100%',
+      justifyContent: 'center',
+      margin: '0',
+    },
+    link: {
+      fontSize:'12px',
+      color: theme.palette.secondary.main,
+      paddingBottom: theme.spacing(1),
+      paddingTop: theme.spacing(1)
     }
   })
 }
 
+export interface ILogin {
+  classes?: any
+  text?: string
+}
+
 //type StyleProps = {} //& WithStyles<typeof styles>
 
-class Login extends React.Component {
+class Login extends React.Component<ILogin, any> {
   render() {
+    const { classes } = this.props
     return (
       <div>
+        <Header />
         <Signup />
         <LoginVia />
-        <a>Already have an account?</a>
+        <Typography className={classes.link}>Already have an account?</Typography>
         <FormControlLabel
-          control={<Checkbox name="keep_signin" />} //checked={}  onChange={}
+          control={<Checkbox name="keep_signin" icon={<RadioButtonUnchecked />} checkedIcon={<RadioButtonChecked />} defaultChecked color="primary" />} //checked={}  onChange={}
           label="Keep me signed in"
+          className={classes.keepSignin}
         />
         {/*<Login /> */}
       </div>
