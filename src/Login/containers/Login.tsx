@@ -20,10 +20,10 @@ const styles = (theme: Theme) => {
       backgroundColor: theme.palette.primary.dark,
       width: '100%',
       justifyContent: 'center',
-      margin: '0',
+      margin: '0'
     },
     link: {
-      fontSize:'12px',
+      fontSize: '12px',
       color: theme.palette.secondary.main,
       paddingBottom: theme.spacing(1),
       paddingTop: theme.spacing(1)
@@ -48,11 +48,19 @@ class Login extends React.Component<ILogin, any> {
         <LoginVia />
         <Typography className={classes.link}>Already have an account?</Typography>
         <FormControlLabel
-          control={<Checkbox name="keep_signin" icon={<RadioButtonUnchecked />} checkedIcon={<RadioButtonChecked />} defaultChecked color="primary" />} //checked={}  onChange={}
+          control={
+            <Checkbox
+              name="keep_signin"
+              icon={<RadioButtonUnchecked />}
+              checkedIcon={<RadioButtonChecked />}
+              defaultChecked
+              color="primary"
+            />
+          } //checked={}  onChange={}
           label="Keep me signed in"
           className={classes.keepSignin}
         />
-        {/*<Login /> */}
+        {/* <LoginForm /> */}
       </div>
     )
   }

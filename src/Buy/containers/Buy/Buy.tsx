@@ -4,17 +4,36 @@ import { createStyles, Grid, Button, Typography, withStyles } from '@material-ui
 import { Translation } from 'react-i18next'
 import { ThunkDispatch } from 'redux-thunk'
 import { connect } from 'react-redux'
+import OptionsBlock from '../../../core/components/OptionsBlock/OptionsBlock'
 
-class Buy extends React.Component {
+class Buy extends React.Component<any> {
   render() {
-    return <div></div>
+    const { classes } = this.props
+    return (
+      <Grid className={classes.root}>
+        <Grid item className={classes.header}>
+          BUY
+        </Grid>
+        <OptionsBlock MenuItem={false} ItemText={'A home with another person'} />
+        <OptionsBlock MenuItem={false} ItemText={'An investment property'} />
+        <OptionsBlock MenuItem={false} ItemText={'A commercial property'} />
+        <OptionsBlock MenuItem={false} ItemText={'Cottage'} />
+        <OptionsBlock MenuItem={false} ItemText={'Farm'} />
+        <OptionsBlock MenuItem={true} ItemText={'Back'} />
+      </Grid>
+    )
   }
 }
 
 const styles = (theme: Theme) => {
-  createStyles({
+  return createStyles({
     root: {
-      background: 'white'
+      justifyContent: 'center',
+      paddingLeft: '5%',
+      paddingRight: '5%'
+    },
+    header: {
+      border: '1px solid' + theme.palette.text.primary
     }
   })
 }

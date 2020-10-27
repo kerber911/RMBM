@@ -8,12 +8,14 @@ import { Route, Switch } from 'react-router-dom'
 import Rent from '../../Rent/containers/Rent'
 import Buy from '../../Buy/containers/Buy'
 import Profile from '../../Profile/containers/Profile'
+import Menu from '../../Menu/containers/Menu'
 
 class Main extends React.Component {
   render() {
     return (
       <div>
         <Switch>
+          <Route exact path="/" component={Menu} />
           <Route exact path="/rent" component={Rent} />
           <Route exact path="/buy" component={Buy} />
           <Route exact path="/profile" component={Profile} />

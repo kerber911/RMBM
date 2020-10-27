@@ -2,19 +2,22 @@ import React from 'react'
 import { Theme, withStyles } from '@material-ui/core/styles'
 import { createStyles, Grid, Button, Typography } from '@material-ui/core'
 import { Translation } from 'react-i18next'
+import { SvgIcon } from 'material-ui'
+import { SvgIconComponent } from '@material-ui/icons'
 
 export interface OptionsBlockComponent {
   classes?: any
   text?: string
   ItemText?: string
   MenuItem?: boolean
+  icon?: string
 }
 
 const OptionsBlock = (props: OptionsBlockComponent) => {
-  const { classes, text, ItemText, MenuItem } = props
+  const { classes, text, ItemText, MenuItem, icon } = props
   return (
     <Grid container className={classes.itemDetail} direction="row" alignItems="center" justify="space-between">
-      <Grid item xs={12} className={classes.itemIcon} style={{ backgroundImage: 'url(${})' }}>
+      <Grid item xs={12} className={classes.itemIcon} style={{ backgroundImage: `url(${icon})` }}>
         <Grid>
           <Typography display="inline">
             {/*show text if its Menu Title text */}
@@ -22,7 +25,7 @@ const OptionsBlock = (props: OptionsBlockComponent) => {
           </Typography>
           <Typography display="inline">
             {/*show text if its common text */}
-            {MenuItem === true ? '' : ItemText}
+            {MenuItem === false ? ItemText : ''}
           </Typography>
         </Grid>
       </Grid>
@@ -33,7 +36,8 @@ const OptionsBlock = (props: OptionsBlockComponent) => {
 const styles = (theme: Theme) =>
   createStyles({
     itemDetail: {
-      border: '1px solid' + theme.palette.primary.main
+      border: '1px solid' + theme.palette.primary.main,
+      marginTop: theme.spacing(3)
     },
     itemIcon: {
       backgroundPosition: 'left center',

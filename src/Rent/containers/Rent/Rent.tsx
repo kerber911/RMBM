@@ -4,21 +4,34 @@ import { createStyles, Grid, Button, Typography, withStyles } from '@material-ui
 import { Translation } from 'react-i18next'
 import { ThunkDispatch } from 'redux-thunk'
 import { connect } from 'react-redux'
-import RentType from '../../components/RentType'
-class Rent extends React.Component {
+import OptionsBlock from '../../../core/components/OptionsBlock/OptionsBlock'
+
+class Rent extends React.Component<any> {
   render() {
+    const { classes } = this.props
     return (
-      <div>
-        <RentType />
-      </div>
+      <Grid className={classes.root}>
+        <Grid item className={classes.header}>
+          RENT
+        </Grid>
+        <OptionsBlock MenuItem={false} ItemText={'Looking to move someone into my current place'} />
+        <OptionsBlock MenuItem={false} ItemText={'To find someone to move into a new place with'} />
+        <OptionsBlock MenuItem={false} ItemText={"I'm a landlord looking for a tenant"} />
+        <OptionsBlock MenuItem={true} ItemText={'Back'} />
+      </Grid>
     )
   }
 }
 
 const styles = (theme: Theme) => {
-  createStyles({
+  return createStyles({
     root: {
-      background: 'white'
+      justifyContent: 'center',
+      paddingLeft: '5%',
+      paddingRight: '5%'
+    },
+    header: {
+      border: '1px solid' + theme.palette.text.primary
     }
   })
 }
