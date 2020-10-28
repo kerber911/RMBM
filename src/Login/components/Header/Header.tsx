@@ -3,6 +3,7 @@ import { Theme, withStyles } from '@material-ui/core/styles'
 import { createStyles, Grid, Button, Typography } from '@material-ui/core'
 import { Translation } from 'react-i18next'
 import RMBMLogo from '../../../RMBMlogo.png'
+import Roof from '../../../header_back.png'
 
 export interface HeaderComponent {
   classes?: any
@@ -12,7 +13,7 @@ export interface HeaderComponent {
 const Header = (props: HeaderComponent) => {
   const { classes, text } = props
   return (
-    <Grid className={classes.root}>
+    <Grid className={classes.root} style={{ backgroundImage: `url(${Roof})` }}>
       <div className={classes.logoSpace}>
         <img src={RMBMLogo} className={classes.logo} alt="" />
       </div>
@@ -34,7 +35,10 @@ const Header = (props: HeaderComponent) => {
 const styles = (theme: Theme) => {
   return createStyles({
     root: {
-      backgroundColor: theme.palette.secondary.main
+      backgroundColor: theme.palette.secondary.main,
+      backgroundPosition: 'center bottom',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '100% 140px'
     },
     logo: {
       height: '150px'

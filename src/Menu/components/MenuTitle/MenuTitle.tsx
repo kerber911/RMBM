@@ -2,7 +2,6 @@ import React from 'react'
 import { Theme, withStyles } from '@material-ui/core/styles'
 import { createStyles, Grid, Button, Typography } from '@material-ui/core'
 import { Translation } from 'react-i18next'
-import RMBMLogo from '../../../RMBMlogo.png'
 
 export interface MenuTitleComponent {
   classes?: any
@@ -17,10 +16,10 @@ const MenuTitle = (props: MenuTitleComponent) => {
   return (
     <Grid className={classes.itemIcon} style={{ backgroundImage: `url(${icon})` }}>
       <Grid item className={classes.title}>
-        <Typography>{title}</Typography>
+        <Typography variant="h2">{title}</Typography>
       </Grid>
       <Grid item className={classes.subtitle}>
-        <Typography>{subtitle}</Typography>
+        <Typography variant="h5">{subtitle}</Typography>
       </Grid>
     </Grid>
   )
@@ -31,10 +30,12 @@ const styles = (theme: Theme) => {
     itemIcon: {
       backgroundPosition: 'center bottom',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '20% auto'
+      backgroundSize: '70% auto'
     },
     title: {},
-    subtitle: {}
+    subtitle: {
+      paddingBottom: theme.spacing(28)
+    }
   })
 }
 

@@ -12,6 +12,7 @@ import PersonIcon from '@material-ui/icons/Person'
 import LockIcon from '@material-ui/icons/Lock'
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 import MailIcon from '@material-ui/icons/Mail'
+import { Link } from 'react-router-dom'
 
 export interface SignupComponent {
   classes?: any
@@ -32,6 +33,7 @@ const Signup = (props: SignupComponent) => {
                 </InputAdornment>
               ),
               disableUnderline: true,
+              required: true,
               className: classes.inputField
             }}
             id="fullname-signup"
@@ -47,6 +49,7 @@ const Signup = (props: SignupComponent) => {
                 </InputAdornment>
               ),
               disableUnderline: true,
+              required: true,
               className: classes.inputField
             }}
             id="email-signup"
@@ -62,6 +65,8 @@ const Signup = (props: SignupComponent) => {
                 </InputAdornment>
               ),
               disableUnderline: true,
+              required: true,
+              type: 'password',
               className: classes.inputField
             }}
             id="password-signup"
@@ -77,6 +82,8 @@ const Signup = (props: SignupComponent) => {
                 </InputAdornment>
               ),
               disableUnderline: true,
+              required: true,
+              type: 'password',
               className: classes.inputField
             }}
             id="password_rep-signup"
@@ -95,7 +102,7 @@ const Signup = (props: SignupComponent) => {
           label="I have read and accept terms and conditions"
         />
       </Grid>
-      <Button variant="contained" className={classes.button}>
+      <Button variant="contained" className={classes.button} component={Link} to={'/main'}>
         Continue
       </Button>
     </Grid>

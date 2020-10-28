@@ -5,21 +5,22 @@ import { Translation } from 'react-i18next'
 import { ThunkDispatch } from 'redux-thunk'
 import { connect } from 'react-redux'
 import OptionsBlock from '../../../core/components/OptionsBlock/OptionsBlock'
+import HeaderSecondary from '../../../Login/components/HeaderSecondary'
 
 class Buy extends React.Component<any> {
   render() {
     const { classes } = this.props
     return (
-      <Grid className={classes.root}>
-        <Grid item className={classes.header}>
-          BUY
+      <Grid>
+        <HeaderSecondary title={'Buy'} color={`#49402F`} />
+        <Grid className={classes.root}>
+          <OptionsBlock MenuItem={false} ItemText={'A home with another person'} />
+          <OptionsBlock MenuItem={false} ItemText={'An investment property'} />
+          <OptionsBlock MenuItem={false} ItemText={'A commercial property'} />
+          <OptionsBlock MenuItem={false} ItemText={'Cottage'} />
+          <OptionsBlock MenuItem={false} ItemText={'Farm'} />
+          <OptionsBlock MenuItem={true} ItemText={'Back'} />
         </Grid>
-        <OptionsBlock MenuItem={false} ItemText={'A home with another person'} />
-        <OptionsBlock MenuItem={false} ItemText={'An investment property'} />
-        <OptionsBlock MenuItem={false} ItemText={'A commercial property'} />
-        <OptionsBlock MenuItem={false} ItemText={'Cottage'} />
-        <OptionsBlock MenuItem={false} ItemText={'Farm'} />
-        <OptionsBlock MenuItem={true} ItemText={'Back'} />
       </Grid>
     )
   }
