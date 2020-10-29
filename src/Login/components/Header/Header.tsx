@@ -8,10 +8,11 @@ import Roof from '../../../header_back.png'
 export interface HeaderComponent {
   classes?: any
   text?: string
+  title?: string
 }
 
 const Header = (props: HeaderComponent) => {
-  const { classes, text } = props
+  const { classes, text, title } = props
   return (
     <Grid className={classes.root} style={{ backgroundImage: `url(${Roof})` }}>
       <div className={classes.logoSpace}>
@@ -26,7 +27,7 @@ const Header = (props: HeaderComponent) => {
         </Grid>
       </Grid>
       <Grid item xs={12} className={classes.secondTitle}>
-        <label>Signup</label>
+        <label>{title}</label>
       </Grid>
     </Grid>
   )

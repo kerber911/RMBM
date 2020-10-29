@@ -11,8 +11,10 @@ import { connect } from 'react-redux'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 import Header from '../components/Header/Header'
+import LoginForm from '../components/LoginForm/LoginForm'
 import RadioButtonChecked from '@material-ui/icons/RadioButtonChecked'
 import RadioButtonUnchecked from '@material-ui/icons/RadioButtonUnchecked'
+import { Route, Link, Switch } from 'react-router-dom'
 
 const styles = (theme: Theme) => {
   return createStyles({
@@ -23,10 +25,10 @@ const styles = (theme: Theme) => {
       margin: '0'
     },
     link: {
-      fontSize: '12px',
       color: theme.palette.secondary.main,
       paddingBottom: theme.spacing(1),
-      paddingTop: theme.spacing(1)
+      paddingTop: theme.spacing(1),
+      textDecoration: 'none'
     }
   })
 }
@@ -43,24 +45,38 @@ class Login extends React.Component<ILogin, any> {
     const { classes } = this.props
     return (
       <div>
-        <Header />
-        <Signup />
-        <LoginVia />
-        <Typography className={classes.link}>Already have an account?</Typography>
-        <FormControlLabel
-          control={
-            <Checkbox
-              name="keep_signin"
-              icon={<RadioButtonUnchecked />}
-              checkedIcon={<RadioButtonChecked />}
-              defaultChecked
-              color="primary"
-            />
-          } //checked={}  onChange={}
-          label="Keep me signed in"
-          className={classes.keepSignin}
-        />
-        {/* <LoginForm /> */}
+        <Grid>
+          <Switch>
+            <Route exact path="/login">
+              <Header title={'Sign up'} />
+              <Signup />
+              <LoginVia />
+              <Grid component={Link} to={'loginform'} className={classes.link}>
+                <Typography variant="h6">Already have an account?</Typography>
+              </Grid>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    name="keep_signin"
+                    icon={<RadioButtonUnchecked />}
+                    checkedIcon={<RadioButtonChecked />}
+                    defaultChecked
+                    color="primary"
+                  />
+                } //checked={}  onChange={}
+                label="Keep me signed in"
+                className={classes.keepSignin}
+              />
+            </Route>
+            <Route path="/login/loginform">
+              <Header title={'Log in'} />
+              <LoginForm />
+            </Route>
+            <Route path="/login/2-step">
+              <Header title={'Verification'} />
+            </Route>
+          </Switch>
+        </Grid>
       </div>
     )
   }

@@ -31,7 +31,7 @@ const createTypographyStyle = (palette: Palette): TypographyOptions => {
       fontWeight: 500,
       fontSize: '.8rem',
       lineHeight: 1.2,
-      color: palette.text.primary
+      color: palette.text.hint
     }
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Theme, withStyles } from '@material-ui/core/styles'
-import { createStyles, Grid, Button, Typography } from '@material-ui/core'
-import { Translation } from 'react-i18next'
+import { createStyles, Grid } from '@material-ui/core'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import FacebookIcon from '@material-ui/icons/Facebook'
 

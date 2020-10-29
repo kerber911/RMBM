@@ -19,6 +19,21 @@ export interface SignupComponent {
   text?: string
 }
 
+// this.state = {
+//   password: '',
+//   confirmPassword: ''
+// }
+
+// handleSubmit = () => {
+//   const { password, confirmPassword } = this.state;
+//   // perform all neccassary validations
+//   if (password !== confirmPassword) {
+//       alert("Passwords don't match");
+//   } else {
+//       // make API call
+//   }
+// }
+
 const Signup = (props: SignupComponent) => {
   const { classes, text } = props
   return (
@@ -26,6 +41,9 @@ const Signup = (props: SignupComponent) => {
       <Grid item>
         <Typography variant="h5">
           <TextField
+            InputLabelProps={{
+              className: classes.inputField
+            }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -42,6 +60,9 @@ const Signup = (props: SignupComponent) => {
         </Typography>
         <Typography variant="h5">
           <TextField
+            InputLabelProps={{
+              className: classes.inputField
+            }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -58,6 +79,9 @@ const Signup = (props: SignupComponent) => {
         </Typography>
         <Typography variant="h5">
           <TextField
+            InputLabelProps={{
+              className: classes.inputField
+            }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -75,6 +99,9 @@ const Signup = (props: SignupComponent) => {
         </Typography>
         <Typography variant="h5">
           <TextField
+            InputLabelProps={{
+              className: classes.inputField
+            }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -112,7 +139,8 @@ const Signup = (props: SignupComponent) => {
 const styles = (theme: Theme) =>
   createStyles({
     inputField: {
-      borderBottom: '1px solid' + theme.palette.primary.main
+      borderBottom: '1px solid' + theme.palette.primary.main,
+      color: theme.palette.text.primary
     },
     root: {
       justifyContent: 'center',
