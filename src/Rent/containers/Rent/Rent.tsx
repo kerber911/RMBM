@@ -16,13 +16,9 @@ class Rent extends React.Component<any> {
       <Grid>
         <HeaderSecondary title={'Rent'} color={`#F7931E`} />
         <Grid className={classes.root}>
-          <OptionsBlock
-            MenuItem={false}
-            icon={'PersonAdd'}
-            ItemText={'Looking to move someone into my current place'}
-          />
-          <OptionsBlock MenuItem={false} ItemText={'To find someone to move into a new place with'} />
-          <OptionsBlock MenuItem={false} ItemText={"I'm a landlord looking for a tenant"} />
+          <OptionsBlock MenuItem={false} icon={'Rent1'} ItemText={'Looking to move someone into my current place'} />
+          <OptionsBlock MenuItem={false} icon={'Rent2'} ItemText={'To find someone to move into a new place with'} />
+          <OptionsBlock MenuItem={false} icon={'Rent3'} ItemText={"I'm a landlord looking for a tenant"} />
           <NextButton type={'rent'} />
           <BackButton type={'rent'} />
         </Grid>

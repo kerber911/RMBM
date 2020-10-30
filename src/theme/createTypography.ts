@@ -30,8 +30,7 @@ const createTypographyStyle = (palette: Palette): TypographyOptions => {
     h6: {
       fontWeight: 500,
       fontSize: '.8rem',
-      lineHeight: 1.2,
-      color: palette.text.hint
+      lineHeight: 1.2
     }
   }
 }

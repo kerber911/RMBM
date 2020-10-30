@@ -12,6 +12,7 @@ const theme = {
     typography: createTypographyStyle(Palette),
     spacing: 8
   }),
+  //custom coloring for 'next' and 'back buttons'
   button_background: {
     next_button_rent: {
       backgroundColor: '#F7931E',
@@ -26,7 +27,8 @@ const theme = {
       color: '#B6A37C'
     },
     next_button_buy: {
-      backgroundColor: '#B6A37C'
+      backgroundColor: '#49402F',
+      color: '#FFFFFF'
     }
   }
 }

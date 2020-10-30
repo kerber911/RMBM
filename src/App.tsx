@@ -10,6 +10,8 @@ import { Route, Switch } from 'react-router-dom'
 import Rent from './Rent/containers/Rent'
 import Buy from './Buy/containers/Buy'
 import Profile from './Profile/containers/Profile'
+import Result from './Reslut/containers/Result'
+import Chat from './Chat/containers/Chat'
 
 const App: React.FC = () => {
   return (
@@ -22,6 +24,8 @@ const App: React.FC = () => {
             <Route exact path="/rent" component={Rent} />
             <Route exact path="/buy" component={Buy} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/result" component={Result} />
+            <Route exact path="/chat" component={Chat} />
           </Switch>
         </div>
       </ThemeProvider>

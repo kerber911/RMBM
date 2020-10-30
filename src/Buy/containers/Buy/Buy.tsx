@@ -6,6 +6,8 @@ import { ThunkDispatch } from 'redux-thunk'
 import { connect } from 'react-redux'
 import OptionsBlock from '../../../core/components/OptionsBlock/OptionsBlock'
 import HeaderSecondary from '../../../Login/components/HeaderSecondary'
+import NextButton from '../../../core/components/NextButton/NextButton'
+import BackButton from '../../../core/components/BackButton/BackButton'
 
 class Buy extends React.Component<any> {
   render() {
@@ -14,12 +16,13 @@ class Buy extends React.Component<any> {
       <Grid>
         <HeaderSecondary title={'Buy'} color={`#49402F`} />
         <Grid className={classes.root}>
-          <OptionsBlock MenuItem={false} ItemText={'A home with another person'} />
-          <OptionsBlock MenuItem={false} ItemText={'An investment property'} />
-          <OptionsBlock MenuItem={false} ItemText={'A commercial property'} />
+          <OptionsBlock MenuItem={false} icon={'Buy1'} ItemText={'A home with another person (or family)'} />
+          <OptionsBlock MenuItem={false} icon={'Buy2'} ItemText={'An investment property'} />
+          <OptionsBlock MenuItem={false} icon={'Buy3'} ItemText={'A commercial property'} />
           <OptionsBlock MenuItem={false} ItemText={'Cottage'} />
           <OptionsBlock MenuItem={false} ItemText={'Farm'} />
-          <OptionsBlock MenuItem={true} ItemText={'Back'} />
+          <NextButton type={'buy'} />
+          <BackButton type={'buy'} />
         </Grid>
       </Grid>
     )
