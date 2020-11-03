@@ -12,9 +12,9 @@ import PersonIcon from '@material-ui/icons/Person'
 import LockIcon from '@material-ui/icons/Lock'
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 import MailIcon from '@material-ui/icons/Mail'
-import { Link } from 'react-router-dom'
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 
-export interface SignupComponent {
+export interface SignupComponent extends RouteComponentProps {
   classes?: any
   text?: string
 }
@@ -37,102 +37,112 @@ export interface SignupComponent {
 const Signup = (props: SignupComponent) => {
   const { classes, text } = props
   return (
-    <Grid container className={classes.root}>
-      <Grid item>
-        <Typography variant="h5">
-          <TextField
-            InputLabelProps={{
-              className: classes.inputField
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <PersonIcon className={classes.inputIcon} />
-                </InputAdornment>
-              ),
-              disableUnderline: true,
-              required: true,
-              className: classes.inputField
-            }}
-            id="fullname-signup"
-            label="Your full name"
-          />
-        </Typography>
-        <Typography variant="h5">
-          <TextField
-            InputLabelProps={{
-              className: classes.inputField
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <MailIcon className={classes.inputIcon} />
-                </InputAdornment>
-              ),
-              disableUnderline: true,
-              required: true,
-              className: classes.inputField
-            }}
-            id="email-signup"
-            label="Your email"
-          />
-        </Typography>
-        <Typography variant="h5">
-          <TextField
-            InputLabelProps={{
-              className: classes.inputField
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LockIcon className={classes.inputIcon} />
-                </InputAdornment>
-              ),
-              disableUnderline: true,
-              required: true,
-              type: 'password',
-              className: classes.inputField
-            }}
-            id="password-signup"
-            label="Your Password"
-          />
-        </Typography>
-        <Typography variant="h5">
-          <TextField
-            InputLabelProps={{
-              className: classes.inputField
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LockOpenIcon className={classes.inputIcon} />
-                </InputAdornment>
-              ),
-              disableUnderline: true,
-              required: true,
-              type: 'password',
-              className: classes.inputField
-            }}
-            id="password_rep-signup"
-            label="Repeat Password"
-          />
-        </Typography>
-        <FormControlLabel
-          control={
-            <Checkbox
-              icon={<RadioButtonUnchecked />}
-              checkedIcon={<RadioButtonChecked />}
-              color="primary"
-              name="terms_condi"
-            />
-          } //checked={}  onChange={}
-          label="I have read and accept terms and conditions"
-        />
-      </Grid>
-      <Button variant="contained" className={classes.button} component={Link} to={'/main'}>
-        Continue
-      </Button>
-    </Grid>
+    <Translation>
+      {(t, { i18n }) => (
+        <>
+          <Grid container className={classes.root}>
+            <Grid item>
+              <Typography variant="h5">
+                <TextField
+                  InputLabelProps={{
+                    className: classes.inputField
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <PersonIcon className={classes.inputIcon} />
+                      </InputAdornment>
+                    ),
+                    disableUnderline: true,
+                    required: true,
+                    className: classes.inputField
+                  }}
+                  id="fullname-signup"
+                  label={t('__signup.fullname')}
+                />
+              </Typography>
+              <Typography variant="h5">
+                <TextField
+                  InputLabelProps={{
+                    className: classes.inputField
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <MailIcon className={classes.inputIcon} />
+                      </InputAdornment>
+                    ),
+                    disableUnderline: true,
+                    required: true,
+                    className: classes.inputField
+                  }}
+                  id="email-signup"
+                  label={t('__signup.email')}
+                />
+              </Typography>
+              <Typography variant="h5">
+                <TextField
+                  InputLabelProps={{
+                    className: classes.inputField
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <LockIcon className={classes.inputIcon} />
+                      </InputAdornment>
+                    ),
+                    disableUnderline: true,
+                    required: true,
+                    type: 'password',
+                    className: classes.inputField
+                  }}
+                  id="password-signup"
+                  label={t('__signup.password')}
+                />
+              </Typography>
+              <Typography variant="h5">
+                <TextField
+                  InputLabelProps={{
+                    className: classes.inputField
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <LockOpenIcon className={classes.inputIcon} />
+                      </InputAdornment>
+                    ),
+                    disableUnderline: true,
+                    required: true,
+                    type: 'password',
+                    className: classes.inputField
+                  }}
+                  id="password_rep-signup"
+                  label={t('__signup.repeatpassword')}
+                />
+              </Typography>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    icon={<RadioButtonUnchecked />}
+                    checkedIcon={<RadioButtonChecked />}
+                    color="primary"
+                    name="terms_condi"
+                  />
+                } //checked={}  onChange={}
+                label={t('__signup.termsandconditions')}
+              />
+            </Grid>
+            <Button
+              variant="contained"
+              className={classes.button}
+              onClick={() => props.history.push('/login/two_step')}
+            >
+              {t('__general.continue')}
+            </Button>
+          </Grid>
+        </>
+      )}
+    </Translation>
   )
 }
 
@@ -162,4 +172,4 @@ const styles = (theme: Theme) =>
     }
   })
 
-export default withStyles(styles, { name: 'MuiSingup' })(Signup)
+export default withRouter(withStyles(styles, { name: 'MuiSingup' })(Signup) as any)

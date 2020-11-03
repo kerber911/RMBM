@@ -1,0 +1,26 @@
+{
+  "translation": {
+    "__general": {
+      "next": "Next",
+      "back": "Back",
+      "continue": "Continue"
+    },
+    "__login": {
+      "haveaccount": "Already have an account?",
+      "keepsignin": "Keep me signed in",
+      "enterphone": "Enter your cellphone number to receive an authentication code",
+      "recievesms": "You will receive an SMS message with a 5 digit number which you need to finish the account creation process",
+      "disclaimer": "Rent Match Buy Match uses a two step authentication for all our accounts. Your number will not be used for any other purpose other than to verify your account in order to ensure a safe experience for all our users.",
+      "enterdigits": "Enter the 5 digits you just received",
+      "problemtext": "If you haven't received a text message please check the number you provided and try again",
+      "stillproblem": "Still having problems creating an account? Contact support"
+    },
+    "__signup": {
+      "termsandconditions": "I have read and accept terms and conditions",
+      "repeatpassword": "Repeat Password",
+      "password": "Your Password",
+      "email": "Your email",
+      "fullname": "Your full name"
+    }
+  }
+}

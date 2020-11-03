@@ -4,26 +4,19 @@ import { createStyles, Grid, Button, Typography, withStyles } from '@material-ui
 import { Translation } from 'react-i18next'
 import NextButton from '../NextButton/NextButton'
 import BackButton from '../BackButton/BackButton'
-import SurveySlide from '../SurveySlide/SurveySlide'
-import REType from '../REType/REType'
-import Location from '../Location/Location'
 
-export interface SurveyComponent {
+export interface LocationComponent {
   classes?: any
   text?: string
   title?: string
   type?: string
 }
 
-const Survey = (props: SurveyComponent) => {
+const Location = (props: LocationComponent) => {
   const { classes, text, title, type } = props
   return (
     <Grid>
-      <Grid className={classes.root}>
-        <Location />
-        <REType />
-        <SurveySlide />
-      </Grid>
+      <Grid className={classes.root}></Grid>
     </Grid>
   )
 }
@@ -41,4 +34,4 @@ const styles = (theme: any) => {
   })
 }
 
-export default withStyles(styles, { name: 'MuiSurvey' })(Survey)
+export default withStyles(styles, { name: 'MuiLocation' })(Location)

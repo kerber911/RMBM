@@ -13,6 +13,11 @@ import RealEstateIcon from './../../../icons/realestate.svg'
 import MoversIcon from './../../../icons/movers.svg'
 import LegalIcon from './../../../icons/legal.svg'
 import RenoIcon from './../../../icons/reno.svg'
+import MatchesIcon from './../../../icons/matches.svg'
+import ProfileIcon from './../../../icons/profile.svg'
+import MessageIcon from './../../../icons/msgs.svg'
+import FAQIcon from './../../../icons/faq.svg'
+import SupportIcon from './../../../icons/zupcanik.svg'
 
 export interface OptionsBlockComponent {
   classes?: any
@@ -46,19 +51,17 @@ const OptionsBlock = (props: OptionsBlockComponent) => {
         <img className={classes.img} alt="complex" src={LegalIcon} />
       ) : icon === 'Reno' ? (
         <img className={classes.img} alt="complex" src={RenoIcon} />
-      ) : icon === 'Buy1' ? (
-        <img className={classes.img} alt="complex" src={Buy1Icon} />
-      ) : icon === 'Buy1' ? (
-        <img className={classes.img} alt="complex" src={Buy1Icon} />
-      ) : icon === 'Buy1' ? (
-        <img className={classes.img} alt="complex" src={Buy1Icon} />
-      ) : icon === 'Buy1' ? (
-        <img className={classes.img} alt="complex" src={Buy1Icon} />
-      ) : icon === 'Buy1' ? (
-        <img className={classes.img} alt="complex" src={Buy1Icon} />
-      ) : (
-        <img className={classes.img} alt="complex" src={Buy1Icon} />
-      )}
+      ) : icon === 'Matches' ? (
+        <img className={classes.img} alt="complex" src={MatchesIcon} />
+      ) : icon === 'Profile' ? (
+        <img className={classes.img} alt="complex" src={ProfileIcon} />
+      ) : icon === 'Message' ? (
+        <img className={classes.img} alt="complex" src={MessageIcon} />
+      ) : icon === 'FAQ' ? (
+        <img className={classes.img} alt="complex" src={FAQIcon} />
+      ) : icon === 'Support' ? (
+        <img className={classes.img} alt="complex" src={SupportIcon} />
+      ) : null}
       <Grid className={classes.text}>
         <Typography display="inline">
           {/*show text if its Menu Title text */}
@@ -78,7 +81,9 @@ const styles = (theme: Theme) =>
     itemDetail: {
       border: '1px solid' + theme.palette.primary.main,
       marginTop: theme.spacing(3),
-      flex: 1
+      flexWrap: 'inherit',
+      flex: 1,
+      height: theme.spacing(10)
     },
     img: {
       width: theme.spacing(4),

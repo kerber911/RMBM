@@ -23,8 +23,8 @@ class Result extends React.Component<any> {
         </Grid>
         <Grid className={classes.matches}>
           <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Deki'} />
-          <OptionsBlock MenuItem={true} icon={'Message'} ItemText={'Johnson'} />
-          <OptionsBlock MenuItem={true} icon={'Matches'} ItemText={'Grooya'} />
+          <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Johnson'} />
+          <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Grooya'} />
         </Grid>
         <Grid className={classes.titleSpace}>
           <Grid item className={classes.title}>

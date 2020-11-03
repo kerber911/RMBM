@@ -1,6 +1,6 @@
 import React from 'react'
-import { Theme, withStyles } from '@material-ui/core/styles'
-import { createStyles, Grid, Button, Typography } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
+import { createStyles, Grid, Typography } from '@material-ui/core'
 import { Translation } from 'react-i18next'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import classnames from 'classnames'
@@ -8,12 +8,11 @@ import classnames from 'classnames'
 export interface NextButtonComponent {
   classes?: any
   text?: string
-  title?: string
   type?: string
 }
 
 const NextButton = (props: NextButtonComponent) => {
-  const { classes, text, title, type } = props
+  const { classes, text, type } = props
   return (
     <Grid container className={classnames(classes.buttonFrame, classes[`next_button_${type}`])} direction="row">
       <Grid className={classes.text}>
