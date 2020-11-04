@@ -2,6 +2,8 @@ import React from 'react'
 import { Theme } from '@material-ui/core/styles'
 import { createStyles, Grid, Button, Typography, withStyles } from '@material-ui/core'
 import { Translation } from 'react-i18next'
+import NextButton from '../NextButton/NextButton'
+import BackButton from '../BackButton/BackButton'
 
 import SingleIcon from './../../../icons/single.svg'
 import CondoIcon from './../../../icons/condo.svg'
@@ -23,65 +25,75 @@ export interface RETypeComponent {
 const REType = (props: RETypeComponent) => {
   const { classes, text, title, type, subtitle, hint } = props
   return (
-    <Grid className={classes.root}>
-      <Grid>
-        <Typography>{title}</Typography>
-      </Grid>
-      <Grid>
-        <Typography>{subtitle}</Typography>
-        <Typography variant="h6" className={classes.hint}>
-          {hint}
-        </Typography>
+    <Translation>
+      {(t, { i18n }) => (
         <Grid>
-          {type == 'r_move_into' || type == 'r_find_move' || type == 'r_landlord' ? (
+          <Grid className={classes.root}>
             <Grid>
-              <img className={classes.img} alt="complex" src={RoomIcon} />
-              <Typography display="inline">Room</Typography>
+              <Typography>{title}</Typography>
             </Grid>
-          ) : null}
-          {type == 'b_with_ano' ? (
-            <Grid>
-              <img className={classes.img} alt="complex" src={SingleIcon} />
-              <Typography display="inline">Single</Typography>
+            <Grid className={classes.content}>
+              <Typography>{subtitle}</Typography>
+              <Typography variant="h6" className={classes.hint}>
+                {hint}
+              </Typography>
+              <Grid>
+                {type === 'r_move_into' || type === 'r_find_move' || type === 'r_landlord' ? (
+                  <Grid>
+                    <img className={classes.img} alt="complex" src={RoomIcon} />
+                    <Typography display="inline">{t('__realestate.room')}</Typography>
+                  </Grid>
+                ) : null}
+                {type === 'b_with_ano' ? (
+                  <Grid>
+                    <img className={classes.img} alt="complex" src={SingleIcon} />
+                    <Typography display="inline">{t('__realestate.single')}</Typography>
+                  </Grid>
+                ) : null}
+                { type === 'b_with_ano' ? (
+                <Grid>
+                  <img className={classes.img} alt="complex" src={SemiDetachedIcon} />
+                  <Typography display="inline">{t('__realestate.semi')}</Typography>
+                </Grid>
+                 ) : null}
+                {type === 'b_with_ano' ? (
+                  <Grid>
+                    <img className={classes.img} alt="complex" src={AnyHouseIcon} />
+                    <Typography display="inline">{t('__realestate.anytype')}</Typography>
+                  </Grid>
+                ) : null}
+                {type === 'r_move_into' || type === 'r_find_move' || type === 'r_landlord' || type === 'b_with_ano' ? (
+                  <Grid>
+                    <img className={classes.img} alt="complex" src={AppartmentIcon} />
+                    <Typography display="inline">{t('__realestate.appartment')}</Typography>
+                  </Grid>
+                ) : null}
+                {type === 'r_move_into' || type === 'b_with_ano' ? (
+                  <Grid>
+                    <img className={classes.img} alt="complex" src={CondoIcon} />
+                    <Typography display="inline">{t('__realestate.condo')}</Typography>
+                  </Grid>
+                ) : null}
+                {type === 'r_move_into' || type === 'r_find_move' || type === 'r_landlord' ? (
+                  <Grid>
+                    <img className={classes.img} alt="complex" src={SingleIcon} />
+                    <Typography display="inline">{t('__realestate.house')}</Typography>
+                  </Grid>
+                ) : null}
+                {type === 'r_find_move' ? (
+                  <Grid>
+                    <img className={classes.img} alt="complex" src={AnyIcon} />
+                    <Typography display="inline">{t('__realestate.any')}</Typography>
+                  </Grid>
+                ) : null}
+              </Grid>
             </Grid>
-          ) : null}
-          <Grid>
-            <img className={classes.img} alt="complex" src={SemiDetachedIcon} />
-            <Typography display="inline">Semi detached</Typography>
           </Grid>
-          {type == 'b_with_ano' ? (
-            <Grid>
-              <img className={classes.img} alt="complex" src={AnyHouseIcon} />
-              <Typography display="inline">Any type of house</Typography>
-            </Grid>
-          ) : null}
-          {type == 'r_move_into' || type == 'r_find_move' || type == 'r_landlord' || type == 'b_with_ano' ? (
-            <Grid>
-              <img className={classes.img} alt="complex" src={AppartmentIcon} />
-              <Typography display="inline">Appartment</Typography>
-            </Grid>
-          ) : null}
-          {type == 'r_move_into' || type == 'b_with_ano' ? (
-            <Grid>
-              <img className={classes.img} alt="complex" src={CondoIcon} />
-              <Typography display="inline">Condo</Typography>
-            </Grid>
-          ) : null}
-          {type == 'r_move_into' || type == 'r_find_move' || type == 'r_landlord' ? (
-            <Grid>
-              <img className={classes.img} alt="complex" src={SingleIcon} />
-              <Typography display="inline">House</Typography>
-            </Grid>
-          ) : null}
-          {type == 'r_find_move' ? (
-            <Grid>
-              <img className={classes.img} alt="complex" src={AnyIcon} />
-              <Typography display="inline">Any</Typography>
-            </Grid>
-          ) : null}
+          <NextButton type={'rent'} />
+          <BackButton type={'rent'} />
         </Grid>
-      </Grid>
-    </Grid>
+      )}
+    </Translation>
   )
 }
 
@@ -90,13 +102,19 @@ const styles = (theme: any) => {
     root: {
       justifyContent: 'center',
       paddingLeft: '5%',
-      paddingRight: '5%'
-    },
-    header: {
-      border: '1px solid' + theme.palette.text.primary
+      paddingRight: '5%',
+      flex: 1,
+      flexGrow: 1,
+      height: '40vh',
+      border: '1px solid' + theme.palette.text.primary,
+      marginBottom: '15%',
+      padding: '1vW'
     },
     hint: {
       color: theme.palette.text.hint
+    },
+    img: {
+      width: theme.spacing(6),
     }
   })
 }

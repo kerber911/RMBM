@@ -4,6 +4,7 @@ import { createStyles, Grid, Typography } from '@material-ui/core'
 import { Translation } from 'react-i18next'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import classnames from 'classnames'
+//import BrowserHistory from 'react-router/lib/BrowserHistory'
 
 export interface BackButtonComponent {
   classes?: any
@@ -15,6 +16,8 @@ const BackButton = (props: BackButtonComponent) => {
   const { classes, text, type } = props
   return (
     <Grid container className={classnames(classes.buttonFrame, classes[`back_button_${type}`])} direction="row">
+      {' '}
+      {/*onClick={browserHistory.goBack} */}
       <Grid>
         <ArrowBackIcon className={classes.Icon} />
       </Grid>

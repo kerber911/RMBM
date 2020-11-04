@@ -16,17 +16,21 @@ export interface MenuComponent {
 const Menu = (props: MenuComponent) => {
   const { classes, text } = props
   return (
-    <Grid>
-      <HeaderSecondary color={`#B6A37C`} />
-      <Grid container className={classes.root}>
-        <Grid item className={classes.option} component={Link} to={'/rent'}>
-          <MenuTitle title={'Rent'} subtitle={'Matching'} icon={RentIcon} />
+    <Translation>
+      {(t, { i18n }) => (
+        <Grid>
+          <HeaderSecondary color={`#B6A37C`} />
+          <Grid container className={classes.root}>
+            <Grid item className={classes.option} component={Link} to={'/rent'}>
+              <MenuTitle title={t('__rent.title')} subtitle={t('__general.matching')} icon={RentIcon} />
+            </Grid>
+            <Grid item className={classes.option} component={Link} to={'/buy'}>
+              <MenuTitle title={t('__buy.title')} subtitle={t('__general.matching')} icon={BuyIcon} />
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item className={classes.option} component={Link} to={'/buy'}>
-          <MenuTitle title={'Buy'} subtitle={'Matching'} icon={BuyIcon} />
-        </Grid>
-      </Grid>
-    </Grid>
+      )}
+    </Translation>
   )
 }
 

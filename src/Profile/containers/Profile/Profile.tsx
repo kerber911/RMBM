@@ -12,25 +12,29 @@ class Profile extends React.Component<any> {
   render() {
     const { classes } = this.props
     return (
-      <Grid className={classes.root}>
-        <Grid className={classes.titleSpace}>
-          <Grid item className={classes.title}>
-            <Typography variant="h5">My Menu</Typography>
+      <Translation>
+        {(t, { i18n }) => (
+          <Grid className={classes.root}>
+            <Grid className={classes.titleSpace}>
+              <Grid item className={classes.title}>
+                <Typography variant="h5">{t('__profile.menu')} </Typography>
+              </Grid>
+              <Grid item component={Link} to={'/profile'}>
+                <MenuIcon className={classes.profile} />
+              </Grid>
+            </Grid>
+            <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={t('__profile.editprofile')} />
+            <OptionsBlock MenuItem={true} icon={'Message'} ItemText={t('__profile.messages')} />
+            <OptionsBlock MenuItem={true} icon={'Matches'} ItemText={t('__profile.matches')} />
+            <OptionsBlock MenuItem={true} icon={'Legal'} ItemText={t('__profile.legal')} />
+            <OptionsBlock MenuItem={true} icon={'Movers'} ItemText={t('__profile.movers')} />
+            <OptionsBlock MenuItem={true} icon={'Reno'} ItemText={t('__profile.painting')} />
+            <OptionsBlock MenuItem={true} icon={'RealEstate'} ItemText={t('__profile.realestate')} />
+            <OptionsBlock MenuItem={true} icon={'FAQ'} ItemText={t('__profile.faq')} />
+            <OptionsBlock MenuItem={true} icon={'Support'} ItemText={t('__profile.settings')} />
           </Grid>
-          <Grid item component={Link} to={'/profile'}>
-            <MenuIcon className={classes.profile} />
-          </Grid>
-        </Grid>
-        <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Edit My Profile'} />
-        <OptionsBlock MenuItem={true} icon={'Message'} ItemText={'Messages'} />
-        <OptionsBlock MenuItem={true} icon={'Matches'} ItemText={'My Matches'} />
-        <OptionsBlock MenuItem={true} icon={'Legal'} ItemText={'Legal Contract'} />
-        <OptionsBlock MenuItem={true} icon={'Movers'} ItemText={'Movig Service'} />
-        <OptionsBlock MenuItem={true} icon={'Reno'} ItemText={'Paiting / Reno '} />
-        <OptionsBlock MenuItem={true} icon={'RealEstate'} ItemText={'Real-estate Agent'} />
-        <OptionsBlock MenuItem={true} icon={'FAQ'} ItemText={'FAQ'} />
-        <OptionsBlock MenuItem={true} icon={'Support'} ItemText={'Contact Suuport'} />
-      </Grid>
+        )}
+      </Translation>
     )
   }
 }

@@ -3,7 +3,8 @@
     "__general": {
       "next": "Next",
       "back": "Back",
-      "continue": "Continue"
+      "continue": "Continue",
+      "matching": "Matching"
     },
     "__login": {
       "haveaccount": "Already have an account?",
@@ -21,6 +22,47 @@
       "password": "Your Password",
       "email": "Your email",
       "fullname": "Your full name"
+    },
+    "__rent": {
+      "title": "Rent",
+      "lookingtomove": "Looking to move someone into my current place",
+      "findsomeonetomove": "To find someone to move into a new place with",
+      "landlord": "I'm a landlord looking for a tenant"
+    },
+    "__buy": {
+      "title": "Buy",
+      "homewithanother": "A home with another person (or family)",
+      "investment": "An investment property",
+      "commercial": "A commecrial property",
+      "cottage": "Cottage",
+      "farm": "Farm"
+    },
+    "__result": {
+      "title": "Your Matches:",
+      "alsoneeded": "You will also need:"
+    },
+    "__survey": {},
+    "__profile": {
+      "menu": "My Menu",
+      "editprofile": "Edit My Profile",
+      "messages": "Messages",
+      "matches": "My Matches",
+      "legal": "Legal Contract",
+      "movers": "Moving Service",
+      "painting": "Painting / Reno",
+      "realestate": "Real-estate Agent",
+      "faq": "FAQ",
+      "settings": "Settings"
+    },
+    "__realestate": {
+      "room": "Room",
+      "single": "Single",
+      "semi": "Semi detached",
+      "anytype": "Any type of house",
+      "appartment": "Appartment",
+      "condo": "Condo",
+      "house": "House",
+      "any": "Any"
     }
   }
 }

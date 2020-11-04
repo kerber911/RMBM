@@ -22,9 +22,18 @@ const App: React.FC = () => {
           <div className="App">
             <Switch>
               <Route exact path="/login" component={Login} />
+              <Route exact path="/login/loginform" component={Login} />
+              <Route exact path="/login/two_step" component={Login} />
+              <Route exact path="/login/two_step_second" component={Login} />
               <Route exact path="/main" component={Main} />
               <Route exact path="/rent" component={Rent} />
+              <Route exact path="/rent/location" component={Rent} />
+              <Route exact path="/rent/estate" component={Rent} />
+              <Route exact path="/rent/survey" component={Rent} />
               <Route exact path="/buy" component={Buy} />
+              <Route exact path="/buy/location" component={Buy} />
+              <Route exact path="/buy/estate" component={Buy} />
+              <Route exact path="/buy/survey" component={Buy} />
               <Route exact path="/profile" component={Profile} />
               <Route exact path="/result" component={Result} />
               <Route exact path="/chat" component={Chat} />

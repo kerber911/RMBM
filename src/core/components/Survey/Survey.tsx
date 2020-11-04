@@ -5,8 +5,6 @@ import { Translation } from 'react-i18next'
 import NextButton from '../NextButton/NextButton'
 import BackButton from '../BackButton/BackButton'
 import SurveySlide from '../SurveySlide/SurveySlide'
-import REType from '../REType/REType'
-import Location from '../Location/Location'
 
 export interface SurveyComponent {
   classes?: any
@@ -20,10 +18,12 @@ const Survey = (props: SurveyComponent) => {
   return (
     <Grid>
       <Grid className={classes.root}>
-        <Location />
-        <REType />
+        {/* <Location />
+        <REType /> */}
         <SurveySlide />
       </Grid>
+      <NextButton type={'rent'} />
+      <BackButton type={'rent'} />
     </Grid>
   )
 }
@@ -33,12 +33,43 @@ const styles = (theme: any) => {
     root: {
       justifyContent: 'center',
       paddingLeft: '5%',
-      paddingRight: '5%'
+      paddingRight: '5%',
+      minHeight: '25vh'
     },
     header: {
       border: '1px solid' + theme.palette.text.primary
     }
   })
 }
+
+const SurveyList = [
+  {
+    name: '',
+    title: '',
+    subtitle: '',
+    hint: '',
+    maxValue: '',
+    minValue: '',
+    icon: ''
+  },
+  {
+    name: '',
+    title: '',
+    subtitle: '',
+    hint: '',
+    maxValue: '',
+    minValue: '',
+    icon: ''
+  },
+  {
+    name: '',
+    title: '',
+    subtitle: '',
+    hint: '',
+    maxValue: '',
+    minValue: '',
+    icon: ''
+  }
+]
 
 export default withStyles(styles, { name: 'MuiSurvey' })(Survey)

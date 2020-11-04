@@ -38,7 +38,11 @@ const TwoStep = (props: TwoStepComponent) => {
               </Typography>
               <Typography variant="h5">{t('__login.recievesms')}</Typography>
             </Grid>
-            <Button variant="contained" className={classes.button} onClick={() => props.history.push('/main')}>
+            <Button
+              variant="contained"
+              className={classes.button}
+              onClick={() => props.history.push('two_step_second')}
+            >
               {t('__general.continue')}
             </Button>
             <Grid className={classes.link}>

@@ -41,7 +41,7 @@ const TwoStepSecond = (props: TwoStepSecondComponent) => {
             <Button variant="contained" className={classes.button} onClick={() => props.history.push('/main')}>
               {t('__general.continue')}
             </Button>
-            <Button variant="contained" className={classes.buttonback} onClick={() => props.history.push('/main')}>
+            <Button variant="contained" className={classes.buttonback} onClick={() => props.history.push('two_step')}>
               {t('__general.back')}
             </Button>
           </Grid>

@@ -8,23 +8,44 @@ import OptionsBlock from '../../../core/components/OptionsBlock/OptionsBlock'
 import HeaderSecondary from '../../../Login/components/HeaderSecondary'
 import NextButton from '../../../core/components/NextButton/NextButton'
 import BackButton from '../../../core/components/BackButton/BackButton'
+import Survey from '../../../core/components/Survey'
+import { Route, Switch } from 'react-router-dom'
 
 class Buy extends React.Component<any> {
   render() {
     const { classes } = this.props
     return (
-      <Grid>
-        <HeaderSecondary title={'Buy'} color={`#49402F`} />
-        <Grid className={classes.root}>
-          <OptionsBlock MenuItem={false} icon={'Buy1'} ItemText={'A home with another person (or family)'} />
-          <OptionsBlock MenuItem={false} icon={'Buy2'} ItemText={'An investment property'} />
-          <OptionsBlock MenuItem={false} icon={'Buy3'} ItemText={'A commercial property'} />
-          <OptionsBlock MenuItem={false} ItemText={'Cottage'} />
-          <OptionsBlock MenuItem={false} ItemText={'Farm'} />
-          <NextButton type={'buy'} />
-          <BackButton type={'buy'} />
-        </Grid>
-      </Grid>
+      <Translation>
+        {(t, { i18n }) => (
+          <Switch>
+            <Route exact path="/buy">
+              <Grid>
+                <HeaderSecondary title={t('__buy.title')} color={`#49402F`} />
+                <Grid className={classes.root}>
+                  <OptionsBlock MenuItem={false} icon={'Buy1'} ItemText={t('__buy.homewithanother')} />
+                  <OptionsBlock MenuItem={false} icon={'Buy2'} ItemText={t('__buy.investment')} />
+                  <OptionsBlock MenuItem={false} icon={'Buy3'} ItemText={t('__buy.commercial')} />
+                  <OptionsBlock MenuItem={false} ItemText={t('__buy.cottage')} />
+                  <OptionsBlock MenuItem={false} ItemText={t('__buy.farm')} />
+                  <Grid onClick={() => this.props.history.push('/main')}>
+                    <BackButton type={'buy'} />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Route>
+            <Route exact path="/buy/survey">
+              <Grid>
+                <HeaderSecondary title={t('__buy.title')} color={`#49402F`} />
+                <Grid className={classes.root}>
+                  <Survey />
+                  <NextButton type={'buy'} />
+                  <BackButton type={'buy'} />
+                </Grid>
+              </Grid>
+            </Route>
+          </Switch>
+        )}
+      </Translation>
     )
   }
 }

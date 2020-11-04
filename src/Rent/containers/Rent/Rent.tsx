@@ -8,21 +8,92 @@ import OptionsBlock from '../../../core/components/OptionsBlock/OptionsBlock'
 import HeaderSecondary from '../../../Login/components/HeaderSecondary'
 import NextButton from '../../../core/components/NextButton/NextButton'
 import BackButton from '../../../core/components/BackButton/BackButton'
+import Survey from '../../../core/components/Survey'
+import { Route, Switch } from 'react-router-dom'
+import REType from '../../../core/components/REType'
+import Location from '../../../core/components/Location'
 
-class Rent extends React.Component<any> {
+interface State {
+  retype: ''
+}
+
+class Rent extends React.Component<State & any> {
+  state: State = {
+    retype: ''
+  }
+
+  showRealEstate = (realestate: string) => {
+    this.setState({ retype: realestate })
+    this.props.history.push('/rent/estate')
+  }
+
   render() {
     const { classes } = this.props
     return (
-      <Grid>
-        <HeaderSecondary title={'Rent'} color={`#F7931E`} />
-        <Grid className={classes.root}>
-          <OptionsBlock MenuItem={false} icon={'Rent1'} ItemText={'Looking to move someone into my current place'} />
-          <OptionsBlock MenuItem={false} icon={'Rent2'} ItemText={'To find someone to move into a new place with'} />
-          <OptionsBlock MenuItem={false} icon={'Rent3'} ItemText={"I'm a landlord looking for a tenant"} />
-          <NextButton type={'rent'} />
-          <BackButton type={'rent'} />
-        </Grid>
-      </Grid>
+      <Translation>
+        {(t, { i18n }) => (
+          <Grid>
+            <Switch>
+              <Route exact path="/rent">
+                <Grid>
+                  <HeaderSecondary title={t('__rent.title')} color={`#F7931E`} />
+                  <Grid className={classes.root}>
+                    <Grid onClick={() => this.showRealEstate('r_move_into')}>
+                      <OptionsBlock MenuItem={false} icon={'Rent1'} ItemText={t('__rent.lookingtomove')} />{' '}
+                      {/*onClick={() => props.history.push('/login/two_step') }*/}
+                    </Grid>
+                    <Grid onClick={() => this.showRealEstate('r_find_move')}>
+                      <OptionsBlock MenuItem={false} icon={'Rent2'} ItemText={t('__rent.findsomeonetomove')} />
+                    </Grid>
+                    <Grid onClick={() => this.showRealEstate('r_landlord')}>
+                      <OptionsBlock MenuItem={false} icon={'Rent3'} ItemText={t('__rent.landlord')} />
+                    </Grid>
+                    <Grid className={classes.backButton} onClick={() => this.props.history.push('/main')}>
+                      <BackButton type={'rent'} />
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Route>
+              <Route
+                exact
+                path="/rent/location"
+                component={() => (
+                  <Grid>
+                    <HeaderSecondary title={t('__rent.title')} color={`#F7931E`} />
+                    <Grid className={classes.root}>
+                      <Location />
+                    </Grid>
+                  </Grid>
+                )}
+              ></Route>
+              <Route
+                exact
+                path="/rent/estate"
+                component={() => (
+                  <Grid>
+                    <HeaderSecondary title={t('__rent.title')} color={`#F7931E`} />
+                    <Grid className={classes.root}>
+                      <REType type={this.state.retype} />
+                    </Grid>
+                  </Grid>
+                )}
+              ></Route>
+              <Route
+                exact
+                path="/rent/survey"
+                component={() => (
+                  <Grid>
+                    <HeaderSecondary title={t('__rent.title')} color={`#F7931E`} />
+                    <Grid className={classes.root}>
+                      <Survey />
+                    </Grid>
+                  </Grid>
+                )}
+              ></Route>
+            </Switch>
+          </Grid>
+        )}
+      </Translation>
     )
   }
 }
@@ -36,6 +107,9 @@ const styles = (theme: any) => {
     },
     header: {
       border: '1px solid' + theme.palette.text.primary
+    },
+    backButton: {
+      marginTop: theme.spacing(7)
     }
   })
 }

@@ -12,30 +12,34 @@ class Result extends React.Component<any> {
   render() {
     const { classes } = this.props
     return (
-      <Grid className={classes.root}>
-        <Grid className={classes.titleSpace}>
-          <Grid item className={classes.title}>
-            <Typography variant="h5">Your Matches: </Typography>
+      <Translation>
+        {(t, { i18n }) => (
+          <Grid className={classes.root}>
+            <Grid className={classes.titleSpace}>
+              <Grid item className={classes.title}>
+                <Typography variant="h5">{t('__result.title')}</Typography>
+              </Grid>
+              <Grid item component={Link} to={'/profile'}>
+                <MenuIcon className={classes.profile} />
+              </Grid>
+            </Grid>
+            <Grid className={classes.matches}>
+              <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Deki'} />
+              <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Johnson'} />
+              <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Grooya'} />
+            </Grid>
+            <Grid className={classes.titleSpace}>
+              <Grid item className={classes.title}>
+                <Typography variant="h5">{t('__result.alsoneeded')} </Typography>
+              </Grid>
+            </Grid>
+            <OptionsBlock MenuItem={true} icon={'Legal'} ItemText={t('__profile.legal')} />
+            <OptionsBlock MenuItem={true} icon={'Movers'} ItemText={t('__profile.movers')} />
+            <OptionsBlock MenuItem={true} icon={'Reno'} ItemText={t('__profile.painting')} />
+            <OptionsBlock MenuItem={true} icon={'RealEstate'} ItemText={t('__profile.realestate')} />
           </Grid>
-          <Grid item component={Link} to={'/profile'}>
-            <MenuIcon className={classes.profile} />
-          </Grid>
-        </Grid>
-        <Grid className={classes.matches}>
-          <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Deki'} />
-          <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Johnson'} />
-          <OptionsBlock MenuItem={true} icon={'Profile'} ItemText={'Grooya'} />
-        </Grid>
-        <Grid className={classes.titleSpace}>
-          <Grid item className={classes.title}>
-            <Typography variant="h5">You will also need: </Typography>
-          </Grid>
-        </Grid>
-        <OptionsBlock MenuItem={true} icon={'Legal'} ItemText={'Legal Contract'} />
-        <OptionsBlock MenuItem={true} icon={'Movers'} ItemText={'Movig Service'} />
-        <OptionsBlock MenuItem={true} icon={'Reno'} ItemText={'Paiting / Reno '} />
-        <OptionsBlock MenuItem={true} icon={'RealEstate'} ItemText={'Real-estate Agent'} />
-      </Grid>
+        )}
+      </Translation>
     )
   }
 }
