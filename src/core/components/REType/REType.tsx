@@ -17,27 +17,26 @@ export interface RETypeComponent {
   classes?: any
   text?: string
   type?: string
-  title?: string
-  subtitle?: string
-  hint?: string
 }
 
 const REType = (props: RETypeComponent) => {
-  const { classes, text, title, type, subtitle, hint } = props
+  const { classes, type } = props
   return (
     <Translation>
       {(t, { i18n }) => (
         <Grid>
+          <Grid className={classes.cover}>
+            <Typography>{t(`__realestate.${type}_title`)}</Typography>
+          </Grid>
           <Grid className={classes.root}>
-            <Grid>
-              <Typography>{title}</Typography>
-            </Grid>
             <Grid className={classes.content}>
-              <Typography>{subtitle}</Typography>
-              <Typography variant="h6" className={classes.hint}>
-                {hint}
-              </Typography>
+              <Grid className={classes.subtitleText}>
+                <Typography>{t(`__realestate.${type}_subtitle`)}</Typography>
+              </Grid>
               <Grid>
+                <Typography className={classes.hintText}>{t(`__realestate.${type}_hint`)}</Typography>
+              </Grid>
+              <Grid className={classes.itemDetail}>
                 {type === 'r_move_into' || type === 'r_find_move' || type === 'r_landlord' ? (
                   <Grid>
                     <img className={classes.img} alt="complex" src={RoomIcon} />
@@ -45,43 +44,43 @@ const REType = (props: RETypeComponent) => {
                   </Grid>
                 ) : null}
                 {type === 'b_with_ano' ? (
-                  <Grid>
+                  <Grid className={classes.itemDetail}>
                     <img className={classes.img} alt="complex" src={SingleIcon} />
                     <Typography display="inline">{t('__realestate.single')}</Typography>
                   </Grid>
                 ) : null}
-                { type === 'b_with_ano' ? (
-                <Grid>
-                  <img className={classes.img} alt="complex" src={SemiDetachedIcon} />
-                  <Typography display="inline">{t('__realestate.semi')}</Typography>
-                </Grid>
-                 ) : null}
                 {type === 'b_with_ano' ? (
-                  <Grid>
+                  <Grid className={classes.itemDetail}>
+                    <img className={classes.img} alt="complex" src={SemiDetachedIcon} />
+                    <Typography display="inline">{t('__realestate.semi')}</Typography>
+                  </Grid>
+                ) : null}
+                {type === 'b_with_ano' ? (
+                  <Grid className={classes.itemDetail}>
                     <img className={classes.img} alt="complex" src={AnyHouseIcon} />
                     <Typography display="inline">{t('__realestate.anytype')}</Typography>
                   </Grid>
                 ) : null}
                 {type === 'r_move_into' || type === 'r_find_move' || type === 'r_landlord' || type === 'b_with_ano' ? (
-                  <Grid>
+                  <Grid className={classes.itemDetail}>
                     <img className={classes.img} alt="complex" src={AppartmentIcon} />
                     <Typography display="inline">{t('__realestate.appartment')}</Typography>
                   </Grid>
                 ) : null}
                 {type === 'r_move_into' || type === 'b_with_ano' ? (
-                  <Grid>
+                  <Grid className={classes.itemDetail}>
                     <img className={classes.img} alt="complex" src={CondoIcon} />
                     <Typography display="inline">{t('__realestate.condo')}</Typography>
                   </Grid>
                 ) : null}
                 {type === 'r_move_into' || type === 'r_find_move' || type === 'r_landlord' ? (
-                  <Grid>
+                  <Grid className={classes.itemDetail}>
                     <img className={classes.img} alt="complex" src={SingleIcon} />
                     <Typography display="inline">{t('__realestate.house')}</Typography>
                   </Grid>
                 ) : null}
                 {type === 'r_find_move' ? (
-                  <Grid>
+                  <Grid className={classes.itemDetail}>
                     <img className={classes.img} alt="complex" src={AnyIcon} />
                     <Typography display="inline">{t('__realestate.any')}</Typography>
                   </Grid>
@@ -89,8 +88,21 @@ const REType = (props: RETypeComponent) => {
               </Grid>
             </Grid>
           </Grid>
-          <NextButton type={'rent'} />
-          <BackButton type={'rent'} />
+          {type != null && type.charAt(0) === 'r' ? (
+            <div>
+              <NextButton type={'rent'} />
+              <BackButton type={'rent'} />
+            </div>
+          ) : (
+            <div>
+              <Grid>
+                <NextButton type={'buy'} />
+              </Grid>
+              <Grid>
+                <BackButton type={'buy'} />
+              </Grid>
+            </div>
+          )}
         </Grid>
       )}
     </Translation>
@@ -100,21 +112,39 @@ const REType = (props: RETypeComponent) => {
 const styles = (theme: any) => {
   return createStyles({
     root: {
-      justifyContent: 'center',
       paddingLeft: '5%',
       paddingRight: '5%',
       flex: 1,
       flexGrow: 1,
       height: '40vh',
       border: '1px solid' + theme.palette.text.primary,
-      marginBottom: '15%',
+      marginBottom: '5vh',
+      marginTop: '1vW',
       padding: '1vW'
     },
-    hint: {
-      color: theme.palette.text.hint
-    },
     img: {
-      width: theme.spacing(6),
+      width: theme.spacing(4),
+      marginRight: theme.spacing(4)
+    },
+    itemDetail: {
+      textAlign: 'left',
+      verticalAlign: 'center',
+      marginTop: theme.spacing(2),
+      flexWrap: 'inherit',
+      flex: 1,
+      height: theme.spacing(5)
+    },
+    hintText: {
+      textAlign: 'left',
+      color: 'gray',
+      fontSize: '1rem'
+    },
+    subtitleText: {
+      textAlign: 'left',
+      paddingBottom: theme.spacing(0.5)
+    },
+    cover: {
+      marginTop: theme.spacing(-2)
     }
   })
 }

@@ -75,5 +75,6 @@ Rent r_landlord      room, appartment, house
 
 Buy  b_with_ano    single, semi detached, any type , appartment , condo
 Buy  b_invest
+Buy  b_commerce
 Buy  b_farm
 Buy  b_cottage

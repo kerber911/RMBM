@@ -62,7 +62,25 @@
       "appartment": "Appartment",
       "condo": "Condo",
       "house": "House",
-      "any": "Any"
+      "any": "Any",
+      "r_move_into_title": "Tell us about your place",
+      "r_move_into_subtitle": "Type of place:",
+      "r_move_into_hint": "Select the type of place you are looking to share",
+      "r_find_move_title": "What type of place are you looking for?",
+      "r_find_move_subtitle": "Type of place:",
+      "r_find_move_hint": "Select the type of place you would like to move into",
+      "r_landlord_title": "What type of place are you renting out?",
+      "r_landlord_subtitle": "Type of place:",
+      "r_landlord_hint": "Select the type of place you are currently in",
+      "b_with_ano_title": "What type of home are you looking for?",
+      "b_with_ano_subtitle": "Type of home:",
+      "b_with_ano_hint": "You can choose more than one type",
+      "b_invest_title": "",
+      "b_invest_subtitle": "",
+      "b_invest_hint": "",
+      "b_commerce_title": "",
+      "b_commerce_subtitle": "",
+      "b_commerce_hint": ""
     }
   }
 }

@@ -10,8 +10,23 @@ import NextButton from '../../../core/components/NextButton/NextButton'
 import BackButton from '../../../core/components/BackButton/BackButton'
 import Survey from '../../../core/components/Survey'
 import { Route, Switch } from 'react-router-dom'
+import REType from '../../../core/components/REType'
+import Location from '../../../core/components/Location'
+
+interface State {
+  retype: ''
+}
 
 class Buy extends React.Component<any> {
+  state: State = {
+    retype: ''
+  }
+
+  showRealEstate = (realestate: string) => {
+    this.setState({ retype: realestate })
+    this.props.history.push('/buy/estate')
+  }
+
   render() {
     const { classes } = this.props
     return (
@@ -22,9 +37,15 @@ class Buy extends React.Component<any> {
               <Grid>
                 <HeaderSecondary title={t('__buy.title')} color={`#49402F`} />
                 <Grid className={classes.root}>
-                  <OptionsBlock MenuItem={false} icon={'Buy1'} ItemText={t('__buy.homewithanother')} />
-                  <OptionsBlock MenuItem={false} icon={'Buy2'} ItemText={t('__buy.investment')} />
-                  <OptionsBlock MenuItem={false} icon={'Buy3'} ItemText={t('__buy.commercial')} />
+                  <Grid onClick={() => this.showRealEstate('b_with_ano')}>
+                    <OptionsBlock MenuItem={false} icon={'Buy1'} ItemText={t('__buy.homewithanother')} />
+                  </Grid>
+                  <Grid onClick={() => this.showRealEstate('b_invest')}>
+                    <OptionsBlock MenuItem={false} icon={'Buy2'} ItemText={t('__buy.investment')} />
+                  </Grid>
+                  <Grid onClick={() => this.showRealEstate('b_commerce')}>
+                    <OptionsBlock MenuItem={false} icon={'Buy3'} ItemText={t('__buy.commercial')} />
+                  </Grid>
                   <OptionsBlock MenuItem={false} ItemText={t('__buy.cottage')} />
                   <OptionsBlock MenuItem={false} ItemText={t('__buy.farm')} />
                   <Grid onClick={() => this.props.history.push('/main')}>
@@ -33,16 +54,32 @@ class Buy extends React.Component<any> {
                 </Grid>
               </Grid>
             </Route>
-            <Route exact path="/buy/survey">
-              <Grid>
-                <HeaderSecondary title={t('__buy.title')} color={`#49402F`} />
-                <Grid className={classes.root}>
-                  <Survey />
-                  <NextButton type={'buy'} />
-                  <BackButton type={'buy'} />
+            <Route
+              exact
+              path="/buy/estate"
+              component={() => (
+                <Grid>
+                  <HeaderSecondary title={t('__buy.title')} color={`#49402F`} />
+                  <Grid className={classes.root}>
+                    <REType type={this.state.retype} />
+                  </Grid>
                 </Grid>
-              </Grid>
-            </Route>
+              )}
+            ></Route>
+            <Route
+              exact
+              path="/buy/survey"
+              component={() => (
+                <Grid>
+                  <HeaderSecondary title={t('__buy.title')} color={`#49402F`} />
+                  <Grid className={classes.root}>
+                    <Survey />
+                    <NextButton type={'buy'} />
+                    <BackButton type={'buy'} />
+                  </Grid>
+                </Grid>
+              )}
+            ></Route>
           </Switch>
         )}
       </Translation>
