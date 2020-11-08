@@ -56,6 +56,18 @@ class Buy extends React.Component<any> {
             </Route>
             <Route
               exact
+              path="/buy/location"
+              component={() => (
+                <Grid>
+                  <HeaderSecondary title={t('__buy.title')} color={`#49402F`} />
+                  <Grid className={classes.root}>
+                    <Location  />
+                  </Grid>
+                </Grid>
+              )}
+            ></Route>
+            <Route
+              exact
               path="/buy/estate"
               component={() => (
                 <Grid>

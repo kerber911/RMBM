@@ -58,12 +58,7 @@ class Rent extends React.Component<State & any> {
                 exact
                 path="/rent/location"
                 component={() => (
-                  <Grid>
-                    <HeaderSecondary title={t('__rent.title')} color={`#F7931E`} />
-                    <Grid className={classes.root}>
                       <Location />
-                    </Grid>
-                  </Grid>
                 )}
               ></Route>
               <Route

@@ -12,7 +12,7 @@ import PersonIcon from '@material-ui/icons/Person'
 import LockIcon from '@material-ui/icons/Lock'
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 import MailIcon from '@material-ui/icons/Mail'
-import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 export interface SignupComponent extends RouteComponentProps {
   classes?: any
@@ -24,7 +24,7 @@ export interface SignupComponent extends RouteComponentProps {
 //   confirmPassword: ''
 // }
 
-// handleSubmit = () => {
+// const handleSubmit = () => {
 //   const { password, confirmPassword } = this.state;
 //   // perform all neccassary validations
 //   if (password !== confirmPassword) {

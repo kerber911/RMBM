@@ -11,8 +11,9 @@ import TextField from '@material-ui/core/TextField'
 import MailIcon from '@material-ui/icons/Mail'
 import LockIcon from '@material-ui/icons/Lock'
 import InputAdornment from '@material-ui/core/InputAdornment'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 
-export interface LoginFormComponent {
+export interface LoginFormComponent extends RouteComponentProps{
   classes?: any
   text?: string
 }
@@ -24,6 +25,7 @@ const LoginForm = (props: LoginFormComponent) => {
       {(t, { i18n }) => (
         <Grid className={classes.root}>
           <Header title={'Log in'} />
+          <Grid className={classes.content}>
           <Typography variant="h5">
             <TextField
               InputLabelProps={{
@@ -40,7 +42,7 @@ const LoginForm = (props: LoginFormComponent) => {
                 className: classes.inputField
               }}
               id="email-login"
-              label={t('__login.email')}
+              label={t('__signup.email')}
             />
           </Typography>
           <Typography variant="h5">
@@ -60,9 +62,17 @@ const LoginForm = (props: LoginFormComponent) => {
                 className: classes.inputField
               }}
               id="password-login"
-              label={t('__login.password')}
+              label={t('__signup.password')}
             />
           </Typography>
+          <Button
+              variant="contained"
+              className={classes.button}
+              onClick={() => props.history.push('/login/two_step')}
+            >
+              {t('__general.continue')}
+            </Button>
+            </Grid>
           <FormControlLabel
             control={
               <Checkbox
@@ -99,8 +109,20 @@ const styles = (theme: Theme) => {
       width: '100%',
       justifyContent: 'center',
       margin: '0'
+    },
+    button: {
+      alignItems: 'center',
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.text.secondary,
+      width: '100%',
+      marginBottom: theme.spacing(2),
+      marginTop: theme.spacing(4),
+    },
+    content: {
+      paddingLeft: '5%',
+      paddingRight: '5%'
     }
   })
 }
 
-export default withStyles(styles, { name: 'MuiLoginForm' })(LoginForm)
+export default withRouter(withStyles(styles, { name: 'MuiLoginForm' })(LoginForm)as any)

@@ -4,6 +4,7 @@ import { createStyles, Grid, Button, Typography, withStyles } from '@material-ui
 import { Translation } from 'react-i18next'
 import NextButton from '../NextButton/NextButton'
 import BackButton from '../BackButton/BackButton'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 import SingleIcon from './../../../icons/single.svg'
 import CondoIcon from './../../../icons/condo.svg'
@@ -13,7 +14,7 @@ import SemiDetachedIcon from './../../../icons/double.svg'
 import RoomIcon from './../../../icons/bed.svg'
 import AnyIcon from './../../../icons/anz.svg'
 
-export interface RETypeComponent {
+export interface RETypeComponent  {
   classes?: any
   text?: string
   type?: string
@@ -95,10 +96,10 @@ const REType = (props: RETypeComponent) => {
             </div>
           ) : (
             <div>
-              <Grid>
+              <Grid >
                 <NextButton type={'buy'} />
               </Grid>
-              <Grid>
+              <Grid >  {/*onClick={() => props.history.push('/buy')}*/}
                 <BackButton type={'buy'} />
               </Grid>
             </div>

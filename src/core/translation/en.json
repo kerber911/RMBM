@@ -81,6 +81,14 @@
       "b_commerce_title": "",
       "b_commerce_subtitle": "",
       "b_commerce_hint": ""
+    },
+    "__location": {
+      "r_move_into_title": "Where is your place?",
+      "r_find_move_title": "Where are you looking to move?",
+      "r_landlord_title": "Where are you renting?",
+      "b_with_ano_title": "Where are you looking to move?",
+      "b_invest_title": "",
+      "b_commerce_title": ""
     }
   }
 }
