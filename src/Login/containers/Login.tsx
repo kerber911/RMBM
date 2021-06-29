@@ -61,7 +61,7 @@ class Login extends React.Component<ILogin, Props> {
               <Switch>
                 <Route
                   exact
-                  path="/login"
+                  path="/"
                   component={() => (
                     <div className={classes.fillSpace}>
                       <Header title={'Sign up'} />

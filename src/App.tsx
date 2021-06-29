@@ -21,7 +21,7 @@ const App: React.FC = () => {
         <I18nextProvider i18n={i18n}>
           <div className="App">
             <Switch>
-              <Route exact path="/login" component={Login} />
+              <Route exact path="/" component={Login} />
               <Route exact path="/login/loginform" component={Login} />
               <Route exact path="/login/two_step" component={Login} />
               <Route exact path="/login/two_step_second" component={Login} />
