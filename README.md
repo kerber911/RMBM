@@ -66,3 +66,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### codes for types of service 
+Rent r_move_into		room, appartment, condo, house
+Rent r_find_move     room, appartment , house, any
+Rent r_landlord      room, appartment, house
+
+Buy  b_with_ano    single, semi detached, any type , appartment , condo
+Buy  b_invest
+Buy  b_commerce
+Buy  b_farm
+Buy  b_cottage

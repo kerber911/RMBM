@@ -1,0 +1,94 @@
+{
+  "translation": {
+    "__general": {
+      "next": "Next",
+      "back": "Back",
+      "continue": "Continue",
+      "matching": "Matching"
+    },
+    "__login": {
+      "haveaccount": "Already have an account?",
+      "keepsignin": "Keep me signed in",
+      "enterphone": "Enter your cellphone number to receive an authentication code",
+      "recievesms": "You will receive an SMS message with a 5 digit number which you need to finish the account creation process",
+      "disclaimer": "Rent Match Buy Match uses a two step authentication for all our accounts. Your number will not be used for any other purpose other than to verify your account in order to ensure a safe experience for all our users.",
+      "enterdigits": "Enter the 5 digits you just received",
+      "problemtext": "If you haven't received a text message please check the number you provided and try again",
+      "stillproblem": "Still having problems creating an account? Contact support"
+    },
+    "__signup": {
+      "termsandconditions": "I have read and accept terms and conditions",
+      "repeatpassword": "Repeat Password",
+      "password": "Your Password",
+      "email": "Your email",
+      "fullname": "Your full name"
+    },
+    "__rent": {
+      "title": "Rent",
+      "lookingtomove": "Looking to move someone into my current place",
+      "findsomeonetomove": "To find someone to move into a new place with",
+      "landlord": "I'm a landlord looking for a tenant"
+    },
+    "__buy": {
+      "title": "Buy",
+      "homewithanother": "A home with another person (or family)",
+      "investment": "An investment property",
+      "commercial": "A commecrial property",
+      "cottage": "Cottage",
+      "farm": "Farm"
+    },
+    "__result": {
+      "title": "Your Matches:",
+      "alsoneeded": "You will also need:"
+    },
+    "__survey": {},
+    "__profile": {
+      "menu": "My Menu",
+      "editprofile": "Edit My Profile",
+      "messages": "Messages",
+      "matches": "My Matches",
+      "legal": "Legal Contract",
+      "movers": "Moving Service",
+      "painting": "Painting / Reno",
+      "realestate": "Real-estate Agent",
+      "faq": "FAQ",
+      "settings": "Settings"
+    },
+    "__realestate": {
+      "room": "Room",
+      "single": "Single",
+      "semi": "Semi detached",
+      "anytype": "Any type of house",
+      "appartment": "Appartment",
+      "condo": "Condo",
+      "house": "House",
+      "any": "Any",
+      "r_move_into_title": "Tell us about your place",
+      "r_move_into_subtitle": "Type of place:",
+      "r_move_into_hint": "Select the type of place you are looking to share",
+      "r_find_move_title": "What type of place are you looking for?",
+      "r_find_move_subtitle": "Type of place:",
+      "r_find_move_hint": "Select the type of place you would like to move into",
+      "r_landlord_title": "What type of place are you renting out?",
+      "r_landlord_subtitle": "Type of place:",
+      "r_landlord_hint": "Select the type of place you are currently in",
+      "b_with_ano_title": "What type of home are you looking for?",
+      "b_with_ano_subtitle": "Type of home:",
+      "b_with_ano_hint": "You can choose more than one type",
+      "b_invest_title": "",
+      "b_invest_subtitle": "",
+      "b_invest_hint": "",
+      "b_commerce_title": "",
+      "b_commerce_subtitle": "",
+      "b_commerce_hint": ""
+    },
+    "__location": {
+      "r_move_into_title": "Where is your place?",
+      "r_find_move_title": "Where are you looking to move?",
+      "r_landlord_title": "Where are you renting?",
+      "b_with_ano_title": "Where are you looking to move?",
+      "b_invest_title": "",
+      "b_commerce_title": ""
+    }
+  }
+}
