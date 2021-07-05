@@ -1,7 +1,8 @@
 import React from 'react'
 import { Theme, withStyles } from '@material-ui/core/styles'
-import { createStyles, Grid, Button, Typography } from '@material-ui/core'
+import { createStyles, Grid, Button, Typography, ButtonBase } from '@material-ui/core'
 import { Translation } from 'react-i18next'
+import classnames from 'classnames'
 
 export interface MenuTitleComponent {
   classes?: any
@@ -9,17 +10,23 @@ export interface MenuTitleComponent {
   title?: string
   subtitle?: string
   icon?: string
+  type?: string
 }
 
 const MenuTitle = (props: MenuTitleComponent) => {
-  const { classes, text, title, subtitle, icon } = props
+  const { classes, text, title, subtitle, icon, type } = props
   return (
-    <Grid className={classes.itemIcon} style={{ backgroundImage: `url(${icon})` }}>
+    <Grid container direction="column"
+    justify="center"
+    alignItems="center"> 
       <Grid item className={classes.title}>
         <Typography variant="h2">{title}</Typography>
       </Grid>
       <Grid item className={classes.subtitle}>
         <Typography variant="h5">{subtitle}</Typography>
+      </Grid>
+      <Grid item className={classnames(classes.itemIcon,classes[`menu_${type}`])}>
+      <ButtonBase><img src={icon} alt="img" width="50%"/></ButtonBase>
       </Grid>
     </Grid>
   )
@@ -28,13 +35,14 @@ const MenuTitle = (props: MenuTitleComponent) => {
 const styles = (theme: Theme) => {
   return createStyles({
     itemIcon: {
-      backgroundPosition: 'center bottom',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '70% auto'
+    display:'flex'
     },
-    title: {},
+    title: {
+    },
     subtitle: {
-      paddingBottom: theme.spacing(28)
+    },
+    menu_buy: {
+      paddingTop:'20%'
     }
   })
 }
