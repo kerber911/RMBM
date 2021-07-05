@@ -68,7 +68,7 @@ class Rent extends React.Component<State & any> {
                   <Grid>
                     <HeaderSecondary title={t('__rent.title')} color={`#F7931E`} />
                     <Grid className={classes.root}>
-                      <REType type={this.state.retype} />
+                      <REType type={this.state.retype}/>
                     </Grid>
                   </Grid>
                 )}
