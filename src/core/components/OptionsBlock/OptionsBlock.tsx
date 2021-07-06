@@ -83,7 +83,8 @@ const styles = (theme: Theme) =>
       marginTop: theme.spacing(3),
       flexWrap: 'inherit',
       flex: 1,
-      height: theme.spacing(10)
+      height: theme.spacing(10),
+      cursor: 'pointer'
     },
     img: {
       width: theme.spacing(4),

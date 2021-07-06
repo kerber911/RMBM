@@ -23,7 +23,8 @@ const styles = (theme: Theme) => {
       backgroundColor: theme.palette.primary.dark,
       width: '100%',
       justifyContent: 'center',
-      margin: '0'
+      margin: '0',
+      cursor: 'pointer'
     },
     link: {
       color: theme.palette.secondary.main,
