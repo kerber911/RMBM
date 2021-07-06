@@ -39,7 +39,8 @@ const styles = (theme: any) => {
       flexGrow: 1,
       alignItems: 'center',
       marginTop: theme.spacing(1),
-      marginBottom: theme.spacing(2)
+      marginBottom: theme.spacing(2),
+      cursor: 'pointer'
     },
     text: {
       flexGrow: 1,

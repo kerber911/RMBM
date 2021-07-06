@@ -124,7 +124,8 @@ const styles = (theme: any) => {
       border: '1px solid' + theme.palette.text.primary,
       marginBottom: '5vh',
       marginTop: '1vW',
-      padding: '1vW'
+      padding: '1vW',
+      cursor: 'pointer'
     },
     img: {
       width: theme.spacing(4),
