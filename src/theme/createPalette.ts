@@ -23,7 +23,7 @@ const palette = (): PaletteOptions => {
     text: {
       primary: '#000000',
       secondary: '#FFFFFF',
-      disabled: '#BABBBB',
+      disabled: '#666666',
       hint: '#B6A37C'
     },
     background: {

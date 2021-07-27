@@ -11,46 +11,69 @@ import FamilyIcon from './../../../icons/family.svg'
 import GrassIcon from './../../../icons/grass.svg'
 import RangeIcon from './../../../icons/pricerange.svg'
 import SocialIcon from './../../../icons/social.svg'
+import RentIcon from './../../../icons/pricerange.svg'
+import MusicIcon from './../../../icons/music.svg'
+import BedIcon from './../../../icons/bed.svg'
+import SmokingIcon from './../../../icons/smoking.svg'
+import AccessIcon from './../../../icons/accessable.svg'
+import ElevatorIcon from './../../../icons/lift.svg'
+
+const Images = [BathIcon, DogIcon, CalendarIcon, FamilyIcon, GrassIcon, RangeIcon, SocialIcon, RentIcon, MusicIcon, BedIcon, SmokingIcon, AccessIcon, ElevatorIcon]
 
 export interface SurveySlideComponent {
   classes?: any
-  text?: string
-  title?: string
+  header?: string
+  title: string
   type?: string
-  subtitle?: string
+  subtitle: string
   hint?: string
-  minValue?: number
-  maxValue?: number
+  minValue: number
+  maxValue: number
+  step?: number
+  minValueText?: string
+  maxValueText?: string
+  Icon: number
 }
 
 function valuetext(value: number) {
   return `${value}`
 }
 
+
+
 const SurveySlide = (props: SurveySlideComponent) => {
-  const { classes, text, title, subtitle, hint, minValue, maxValue } = props
+  const { classes, header, title, subtitle, hint, minValue, maxValue, step, Icon } = props
+    let midValue = Math.round(maxValue / 2)
   return (
     <Grid>
       <Grid className={classes.header}>
-        <Typography>{title}</Typography>
+        <Typography>{header}</Typography>
       </Grid>
-      <Grid className={classes.root}>
-        <Typography>{subtitle}</Typography>
-        <Typography variant="h6" className={classes.hint}>
-          {hint}
-        </Typography>
-        <img className={classes.img} alt="" /> {/*src={Icon}*/}
-        <Slider
-          defaultValue={1}
-          getAriaValueText={valuetext}
-          aria-labelledby="discrete-slider"
-          valueLabelDisplay="auto"
-          step={1}
-          marks
-          min={0}
-          max={2}
-        />
-        <Typography display="inline"></Typography>
+      <Grid container direction="column" className={classes.root}>
+        <div>
+          <Typography variant="h5">{title}</Typography>
+          <Typography variant="h3" className={classes.subtitle}>
+            {subtitle}
+          </Typography>
+        </div>
+        <div>
+          <img className={classes.img} alt="" src={Images[Icon]} />
+        </div>
+        <div className={classes.container}>
+          <Slider
+            defaultValue={midValue}
+            getAriaValueText={valuetext}
+            // onChange={}
+            aria-labelledby="discrete-slider"
+            valueLabelDisplay="auto"
+            step={step}
+            marks
+            min={minValue}
+            max={maxValue}
+          />
+          {<Typography display="inline" variant="h6" className={classes.subtitle}></Typography>}
+          <Typography display="inline" variant="h6" className={classes.hint}>{hint}</Typography>
+        </div>
       </Grid>
     </Grid>
   )
@@ -62,18 +85,26 @@ const styles = (theme: any) => {
       justifyContent: 'center',
       paddingLeft: '5%',
       paddingRight: '5%',
-      flex: 1,
-      flexGrow: 1,
-      height: '40vh',
-      border: '1px solid' + theme.palette.text.primary,
-      marginBottom: '15%',
-      padding: '1vW'
+      height: '48vh',
+      border: '1px solid' + theme.palette.text.disabled,
+      padding: '1vW',
+      display: 'flex'
     },
     img: {
-      height: '20vh'
+      height: '20vh',
+      marginBottom: theme.spacing(1)
     },
     header: {
       alignItems: 'left'
+    },
+    subtitle:{
+      marginBottom: theme.spacing(1)
+    },
+    hint:{
+      color: theme.palette.text.disabled
+    },
+    container:{
+      alignItems:'flex-end'
     }
   })
 }

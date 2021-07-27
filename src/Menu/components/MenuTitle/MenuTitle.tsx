@@ -16,17 +16,17 @@ export interface MenuTitleComponent {
 const MenuTitle = (props: MenuTitleComponent) => {
   const { classes, text, title, subtitle, icon, type } = props
   return (
-    <Grid container direction="column"
-    justify="center"
-    alignItems="center"> 
+    <Grid container direction="column" justify="center" alignItems="center">
       <Grid item className={classes.title}>
         <Typography variant="h2">{title}</Typography>
       </Grid>
       <Grid item className={classes.subtitle}>
         <Typography variant="h5">{subtitle}</Typography>
       </Grid>
-      <Grid item className={classnames(classes.itemIcon,classes[`menu_${type}`])}>
-      <ButtonBase><img src={icon} alt="img" width="50%"/></ButtonBase>
+      <Grid item className={classnames(classes.itemIcon, classes[`menu_${type}`])}>
+        <ButtonBase>
+          <img src={icon} alt="img" width="50%" />
+        </ButtonBase>
       </Grid>
     </Grid>
   )
@@ -35,14 +35,12 @@ const MenuTitle = (props: MenuTitleComponent) => {
 const styles = (theme: Theme) => {
   return createStyles({
     itemIcon: {
-    display:'flex'
+      display: 'flex'
     },
-    title: {
-    },
-    subtitle: {
-    },
+    title: {},
+    subtitle: {},
     menu_buy: {
-      paddingTop:'20%'
+      paddingTop: '20%'
     }
   })
 }

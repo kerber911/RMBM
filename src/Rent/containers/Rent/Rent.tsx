@@ -15,16 +15,21 @@ import Location from '../../../core/components/Location'
 
 interface State {
   retype: ''
+  placeType:''
 }
 
 class Rent extends React.Component<State & any> {
   state: State = {
-    retype: ''
+    retype: '',
+    placeType:''
   }
 
   showRealEstate = (realestate: string) => {
     this.setState({ retype: realestate })
     this.props.history.push('/rent/estate')
+  }
+  showSurvey = (placeType:string) => {
+    this.setState({ placeType: placeType })
   }
 
   render() {
@@ -39,8 +44,7 @@ class Rent extends React.Component<State & any> {
                   <HeaderSecondary title={t('__rent.title')} color={`#F7931E`} />
                   <Grid className={classes.root}>
                     <Grid onClick={() => this.showRealEstate('r_move_into')}>
-                      <OptionsBlock MenuItem={false} icon={'Rent1'} ItemText={t('__rent.lookingtomove')} />{' '}
-                      {/*onClick={() => props.history.push('/login/two_step') }*/}
+                      <OptionsBlock MenuItem={false} icon={'Rent1'} ItemText={t('__rent.lookingtomove')} />
                     </Grid>
                     <Grid onClick={() => this.showRealEstate('r_find_move')}>
                       <OptionsBlock MenuItem={false} icon={'Rent2'} ItemText={t('__rent.findsomeonetomove')} />
@@ -54,13 +58,7 @@ class Rent extends React.Component<State & any> {
                   </Grid>
                 </Grid>
               </Route>
-              <Route
-                exact
-                path="/rent/location"
-                component={() => (
-                      <Location />
-                )}
-              ></Route>
+              <Route exact path="/rent/location" component={() => <Location />}></Route>
               <Route
                 exact
                 path="/rent/estate"
@@ -68,7 +66,7 @@ class Rent extends React.Component<State & any> {
                   <Grid>
                     <HeaderSecondary title={t('__rent.title')} color={`#F7931E`} />
                     <Grid className={classes.root}>
-                      <REType type={this.state.retype}/>
+                      <REType type={this.state.retype} />
                     </Grid>
                   </Grid>
                 )}
@@ -98,7 +96,8 @@ const styles = (theme: any) => {
     root: {
       justifyContent: 'center',
       paddingLeft: '5%',
-      paddingRight: '5%'
+      paddingRight: '5%',
+      height:'75vH'
     },
     header: {
       border: '1px solid' + theme.palette.text.primary

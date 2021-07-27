@@ -18,10 +18,10 @@ const Location = (props: LocationComponent) => {
   const { classes, text, title, type } = props
   return (
     <Translation>
-    {(t, { i18n }) => (
-    <Grid>
-      <Grid className={classes.root}>
-      <Grid className={classes.titleSpace}>
+      {(t, { i18n }) => (
+        <Grid>
+          <Grid className={classes.root}>
+            <Grid className={classes.titleSpace}>
               <Grid item className={classes.title}>
                 <Typography variant="h5">{t('__location.title')} </Typography>
               </Grid>
@@ -29,10 +29,10 @@ const Location = (props: LocationComponent) => {
                 <MenuIcon className={classes.profile} />
               </Grid>
             </Grid>
-      </Grid>
-    </Grid>
+          </Grid>
+        </Grid>
       )}
-      </Translation>
+    </Translation>
   )
 }
 
@@ -42,7 +42,7 @@ const styles = (theme: any) => {
       justifyContent: 'center',
       paddingLeft: '5%',
       paddingRight: '5%'
-    },    
+    },
     titleSpace: {
       border: '1px solid' + theme.palette.text.primary,
       height: theme.spacing(7),

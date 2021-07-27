@@ -13,7 +13,7 @@ import LockIcon from '@material-ui/icons/Lock'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 
-export interface LoginFormComponent extends RouteComponentProps{
+export interface LoginFormComponent extends RouteComponentProps {
   classes?: any
   text?: string
 }
@@ -26,53 +26,53 @@ const LoginForm = (props: LoginFormComponent) => {
         <Grid className={classes.root}>
           <Header title={'Log in'} />
           <Grid className={classes.content}>
-          <Typography variant="h5">
-            <TextField
-              InputLabelProps={{
-                className: classes.inputField
-              }}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <MailIcon className={classes.inputIcon} />
-                  </InputAdornment>
-                ),
-                disableUnderline: true,
-                required: true,
-                className: classes.inputField
-              }}
-              id="email-login"
-              label={t('__signup.email')}
-            />
-          </Typography>
-          <Typography variant="h5">
-            <TextField
-              InputLabelProps={{
-                className: classes.inputField
-              }}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <LockIcon className={classes.inputIcon} />
-                  </InputAdornment>
-                ),
-                disableUnderline: true,
-                required: true,
-                type: 'password',
-                className: classes.inputField
-              }}
-              id="password-login"
-              label={t('__signup.password')}
-            />
-          </Typography>
-          <Button
+            <Typography variant="h5">
+              <TextField
+                InputLabelProps={{
+                  className: classes.inputField
+                }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <MailIcon className={classes.inputIcon} />
+                    </InputAdornment>
+                  ),
+                  disableUnderline: true,
+                  required: true,
+                  className: classes.inputField
+                }}
+                id="email-login"
+                label={t('__signup.email')}
+              />
+            </Typography>
+            <Typography variant="h5">
+              <TextField
+                InputLabelProps={{
+                  className: classes.inputField
+                }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LockIcon className={classes.inputIcon} />
+                    </InputAdornment>
+                  ),
+                  disableUnderline: true,
+                  required: true,
+                  type: 'password',
+                  className: classes.inputField
+                }}
+                id="password-login"
+                label={t('__signup.password')}
+              />
+            </Typography>
+            <Button
               variant="contained"
               className={classes.button}
               onClick={() => props.history.push('/login/two_step')}
             >
               {t('__general.continue')}
             </Button>
-            </Grid>
+          </Grid>
           <FormControlLabel
             control={
               <Checkbox
@@ -116,7 +116,7 @@ const styles = (theme: Theme) => {
       color: theme.palette.text.secondary,
       width: '100%',
       marginBottom: theme.spacing(2),
-      marginTop: theme.spacing(4),
+      marginTop: theme.spacing(4)
     },
     content: {
       paddingLeft: '5%',
@@ -125,4 +125,4 @@ const styles = (theme: Theme) => {
   })
 }
 
-export default withRouter(withStyles(styles, { name: 'MuiLoginForm' })(LoginForm)as any)
+export default withRouter(withStyles(styles, { name: 'MuiLoginForm' })(LoginForm) as any)

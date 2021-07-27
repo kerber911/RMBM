@@ -20,12 +20,12 @@ const Menu = (props: MenuComponent) => {
       {(t, { i18n }) => (
         <Grid>
           <HeaderSecondary color={`#B6A37C`} />
-          <Grid container className={classes.root} >
+          <Grid container className={classes.root}>
             <Grid item className={classes.option} component={Link} to={'/rent'}>
               <MenuTitle title={t('__rent.title')} subtitle={t('__general.matching')} icon={RentIcon} />
             </Grid>
             <Grid item className={classes.option} component={Link} to={'/buy'}>
-              <MenuTitle title={t('__buy.title')} subtitle={t('__general.matching')} icon={BuyIcon} type="buy"/>
+              <MenuTitle title={t('__buy.title')} subtitle={t('__general.matching')} icon={BuyIcon} type="buy" />
             </Grid>
           </Grid>
         </Grid>

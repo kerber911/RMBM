@@ -61,7 +61,7 @@ class Buy extends React.Component<any> {
                 <Grid>
                   <HeaderSecondary title={t('__buy.title')} color={`#49402F`} />
                   <Grid className={classes.root}>
-                    <Location  />
+                    <Location />
                   </Grid>
                 </Grid>
               )}

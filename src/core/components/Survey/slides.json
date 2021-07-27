@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Rent?",
+    "subtitle": "How much is the monthly rent for the available space in your place",
+    "hint": "",
+    "image": 7,
+    "minValue": 0,
+    "maxValue": 1,
+    "step": 1
+  },
+  {
+    "title": "Bathrooms?",
+    "subtitle": "Give the number of bathrooms in your place",
+    "hint": "",
+    "image": 0,
+    "minValue": 1,
+    "maxValue": 5,
+    "step": 1
+  },
+  {
+    "title": "Elevator?",
+    "subtitle": "Does your building have an elevator and if yes, how many",
+    "hint": "",
+    "image": 12,
+    "minValue": 0,
+    "maxValue": 3,
+    "step": 1
+  },
+  {
+    "title": "Accessibility?",
+    "subtitle": "Is your place wheelchair accessible?",
+    "hint": "Middle position is if it can be adapted",
+    "image": 11,
+    "minValue": 0,
+    "maxValue": 2,
+    "step": 1
+  },
+  {
+    "title": "Pet friendly?",
+    "subtitle": "Do you tolerate pets",
+    "hint": "Middle position is if you are fine either way",
+    "image": 1,
+    "minValue": 0,
+    "maxValue": 2,
+    "step": 1
+  },
+  {
+    "title": "Smoking?",
+    "subtitle": "Where do you stand on cigarette smoke",
+    "hint": "Middle position is if you are fine either way",
+    "image": 10,
+    "minValue": 0,
+    "maxValue": 2,
+    "step": 1
+  },
+  {
+    "title": "Marijuana?",
+    "subtitle": "Where do you stand on marijuana smoke",
+    "hint": "Middle position is if you are fine either way",
+    "image": 4,
+    "minValue": 0,
+    "maxValue": 2,
+    "step": 1
+  },
+  {
+    "title": "How long do you see yourself living in this place?",
+    "subtitle": "Give the number of years you plan on staying in the place you are currently renting",
+    "hint": "",
+    "image": 2,
+    "minValue": 1,
+    "maxValue": 10,
+    "step": 1
+  },
+  {
+    "title": "Frequent social gatherings?",
+    "subtitle": "On a scale of 1 to 10 where do you stand on social gatherings in your shared place?",
+    "hint": "1 rarely is OK - 10  frequently is fine",
+    "image": 6,
+    "minValue": 1,
+    "maxValue": 10,
+    "step": 1
+  },
+  {
+    "title": "Music and Singing",
+    "subtitle": "What is your stance on practising musical instruments or singing in your place?",
+    "hint": "Middle position is if you are fine either way",
+    "image": 8,
+    "minValue": 0,
+    "maxValue": 2,
+    "step": 1
+  },
+  {
+    "title": "Bedrooms?",
+    "subtitle": "Give the number of available bedrooms in your place",
+    "hint": "",
+    "image": 9,
+    "minValue": 1,
+    "maxValue": 4,
+    "step": 1
+  },
+  {
+    "title": "Family oriented?",
+    "subtitle": "On a scale of 1 to 10 how confortable are you with living with a family?",
+    "hint": "",
+    "image": 3,
+    "minValue": 1,
+    "maxValue": 10,
+    "step": 1
+  }
+]

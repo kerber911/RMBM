@@ -14,14 +14,15 @@ import SemiDetachedIcon from './../../../icons/double.svg'
 import RoomIcon from './../../../icons/bed.svg'
 import AnyIcon from './../../../icons/anz.svg'
 
-export interface RETypeComponent  {
+export interface RETypeComponent {
   classes?: any
   text?: string
   type?: string
+
 }
 
 const REType = (props: RETypeComponent) => {
-  const history = useHistory();
+  const history = useHistory()
   const { classes, type } = props
   return (
     <Translation>
@@ -92,19 +93,21 @@ const REType = (props: RETypeComponent) => {
           </Grid>
           {type != null && type.charAt(0) === 'r' ? (
             <div>
-              <NextButton type={'rent'} />
+              <Grid className={classes.backButton} onClick={() => history.push('/rent/survey')}>
+                <NextButton type={'rent'} />
+              </Grid>
               <Grid className={classes.backButton} onClick={() => history.goBack()}>
-                      <BackButton type={'rent'} />
-                    </Grid>
+                <BackButton type={'rent'} />
+              </Grid>
             </div>
           ) : (
             <div>
-              <Grid className={classes.NextButton} onClick={ event =>  window.location.href='/'}>
+              <Grid className={classes.NextButton} onClick={() => (window.location.href = '/')}>
                 <NextButton type={'buy'} />
               </Grid>
               <Grid className={classes.backButton} onClick={() => history.goBack()}>
-                      <BackButton type={'buy'}/>
-                    </Grid>
+                <BackButton type={'buy'} />
+              </Grid>
             </div>
           )}
         </Grid>

@@ -21,6 +21,12 @@ const createTypographyStyle = (palette: Palette): TypographyOptions => {
       lineHeight: 1.2,
       color: palette.text.primary
     },
+    h3: {
+      fontWeight: 500,
+      fontSize: '1rem',
+      lineHeight: 1.2,
+      color: palette.text.disabled
+    },
     h5: {
       fontWeight: 500,
       fontSize: '1.2rem',
