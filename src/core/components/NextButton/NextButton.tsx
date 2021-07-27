@@ -29,7 +29,7 @@ const styles = (theme: any) => {
   return createStyles({
     ...theme.button_background,
     buttonFrame: {
-      height: theme.spacing(10),
+      height: '10vH',
       width: '100%',
       display: 'flex',
       justifyContent: 'center',

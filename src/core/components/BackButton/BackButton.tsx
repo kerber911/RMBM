@@ -16,8 +16,6 @@ const BackButton = (props: BackButtonComponent) => {
   const { classes, text, type } = props
   return (
     <Grid container className={classnames(classes.buttonFrame, classes[`back_button_${type}`])} direction="row">
-      {' '}
-      {/*onClick={browserHistory.goBack} */}
       <Grid>
         <ArrowBackIcon className={classes.Icon} />
       </Grid>
@@ -32,7 +30,7 @@ const styles = (theme: any) => {
   return createStyles({
     ...theme.button_background,
     buttonFrame: {
-      height: theme.spacing(10),
+      height: '10vH',
       width: '100%',
       display: 'flex',
       justifyContent: 'center',

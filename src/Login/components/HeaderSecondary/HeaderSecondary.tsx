@@ -34,7 +34,8 @@ const styles = (theme: Theme) => {
     root: {
       backgroundPosition: 'center bottom',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '100% 150px'
+      backgroundSize: '100% 40%',
+      height:'25vH'
     },
     logo: {
       height: '150px'

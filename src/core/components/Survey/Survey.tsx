@@ -2,25 +2,42 @@ import React from 'react'
 import { Theme } from '@material-ui/core/styles'
 import { createStyles, Grid, Button, Typography, withStyles } from '@material-ui/core'
 import { Translation } from 'react-i18next'
+import Carousel from 'react-material-ui-carousel'
 import NextButton from '../NextButton/NextButton'
 import BackButton from '../BackButton/BackButton'
 import SurveySlide from '../SurveySlide/SurveySlide'
+import slides from './slides.json'
 
 export interface SurveyComponent {
   classes?: any
   text?: string
   title?: string
   type?: string
+
 }
 
 const Survey = (props: SurveyComponent) => {
-  const { classes, text, title, type } = props
+  const { classes, text } = props
   return (
     <Grid>
       <Grid className={classes.root}>
         {/* <Location />
         <REType /> */}
-        <SurveySlide />
+        <Carousel animation="slide" autoPlay={false} swipe={false}>
+          {slides.map((slides, i) => (
+            <SurveySlide
+              key={i}
+              header=""
+              title={slides.title}
+              subtitle={slides.subtitle}
+              hint={slides.hint}
+              minValue={slides.minValue}
+              maxValue={slides.maxValue}
+              Icon={slides.image}
+            />
+          ))
+          }
+        </Carousel>
       </Grid>
       <NextButton type={'rent'} />
       <BackButton type={'rent'} />
@@ -34,42 +51,11 @@ const styles = (theme: any) => {
       justifyContent: 'center',
       paddingLeft: '5%',
       paddingRight: '5%',
-      minHeight: '25vh'
     },
     header: {
       border: '1px solid' + theme.palette.text.primary
     }
   })
 }
-
-const SurveyList = [
-  {
-    name: '',
-    title: '',
-    subtitle: '',
-    hint: '',
-    maxValue: '',
-    minValue: '',
-    icon: ''
-  },
-  {
-    name: '',
-    title: '',
-    subtitle: '',
-    hint: '',
-    maxValue: '',
-    minValue: '',
-    icon: ''
-  },
-  {
-    name: '',
-    title: '',
-    subtitle: '',
-    hint: '',
-    maxValue: '',
-    minValue: '',
-    icon: ''
-  }
-]
 
 export default withStyles(styles, { name: 'MuiSurvey' })(Survey)
